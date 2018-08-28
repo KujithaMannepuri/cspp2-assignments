@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * Class for solution.
+ */
 public class Solution {
 	/*
 	Do not modify this main function.
@@ -21,3 +24,4 @@ public class Solution {
 		else return 1;
 	}
 }
+
