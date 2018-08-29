@@ -20,16 +20,16 @@ public final class Solution {
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);      
         int n = s.nextInt();
         int j = 1;
         int count = 0;
         final int a = 10;
         final int b = 7;
-        for(int i = 1; i <= n; i++){
+        for (int i = 1; i <= n; i++) {
         	j = i;
-        	while(j != 0){
-        		if (j % a == b){
+        	while (j != 0) {
+        		if (j % a == b) {
         			count++;
         		}
         		j /= a;
