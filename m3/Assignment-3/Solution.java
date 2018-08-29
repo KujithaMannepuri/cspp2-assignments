@@ -3,12 +3,15 @@ import java.util.Scanner;
 /*
  Do not modify this main function.
 */
+/**.
+ * Class for solution.
+ */
 public class Solution {
-    /**
+    /**.
      * { var_description }
      */
     private static int gcd = 1;
-    /**
+    /**.
      * { function_description }
      *
      * @param      args  The arguments
@@ -24,7 +27,7 @@ public class Solution {
     /*
 	Need to write the gcd function and print the output.
 	*/
-    /**
+    /**.
      * { function_description }
      *
      * @param      n1    The n 1
