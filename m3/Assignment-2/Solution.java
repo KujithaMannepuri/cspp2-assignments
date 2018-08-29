@@ -9,7 +9,7 @@ import java.util.Scanner;
 public final class Solution {
 /* Fill the main function to print the number of 7's between 1 to n*/
     /**.
-     * { var_description }
+     *  variable description 
      */
     private Solution() {
         //constructor
@@ -17,7 +17,7 @@ public final class Solution {
     /**.
      * { function_description }
      *
-     * @param      args  The arguments
+     * @param args  The arguments
      */
     public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
