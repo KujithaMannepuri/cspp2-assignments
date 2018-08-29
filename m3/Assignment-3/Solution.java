@@ -31,10 +31,10 @@ public final class Solution {
     /**
      * gcd function.
      *
-     * @param      n1    The n 1
-     * @param      n2    The n 2
+     * @param n1 number n1
+     * @param n2 number n2
      *
-     * @return     return value.
+     * @return return value.
      */
     static int gcd(final int n1, final int n2) {
         int temp = 0;
@@ -46,3 +46,7 @@ public final class Solution {
         return temp;
     }
 }
+
+
+
+
