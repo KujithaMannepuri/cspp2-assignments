@@ -4,7 +4,7 @@ import java.util.Scanner;
     Do not modify this main function.
     */
 /**
- * Main class
+ * Main class.
  */
 public final class Solution {
 /* Fill the main function to print the number of 7's between 1 to n*/
@@ -32,7 +32,7 @@ public final class Solution {
                 if (j % a == b) {
                     count++;
                 }
-                j /= a;
+                j = j/a;
             }
         }
         System.out.println(count);
