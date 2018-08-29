@@ -17,16 +17,14 @@ public class Solution {
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-
-        Scanner s = new Scanner(System.in);      
+        Scanner s = new Scanner(System.in); 
         int n1 = s.nextInt();
         int n2 = s.nextInt();
         gcd(n1, n2);
-
     }
     /*
-	Need to write the gcd function and print the output.
-	*/
+    Need to write the gcd function and print the output.
+    */
     /**.
      * { function_description }
      *
