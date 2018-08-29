@@ -28,11 +28,13 @@ public final class Solution {
     /*
     Need to write the gcd function and print the output.
     */
-    /**.
-     * { function_description }
+    /**
+     * gcd function.
      *
      * @param      n1    The n 1
      * @param      n2    The n 2
+     *
+     * @return     return value.
      */
     static int gcd(final int n1, final int n2) {
         int temp = 0;
