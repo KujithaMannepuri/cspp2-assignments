@@ -6,11 +6,11 @@ import java.util.Scanner;
 /**.
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**.
      * { var_description }
      */
-    private Solution() { 
+    private Solution() {
         //constructor
     }
     /**.
