@@ -24,7 +24,13 @@ public class Solution {
     /*
 	Need to write the gcd function and print the output.
 	*/
-    static void gcd(int n1, int n2) {
+    /**
+     * { function_description }
+     *
+     * @param      n1    The n 1
+     * @param      n2    The n 2
+     */
+    static void gcd(final int n1, final int n2) {
         for (int i = 1; i <= n1 && i <= n2; i++) {
             if (n1 % i == 0 && n2 % i == 0) {
                 gcd = i;
