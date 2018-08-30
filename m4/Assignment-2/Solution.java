@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * constructor.
      */
@@ -45,8 +45,7 @@ public class Solution {
                 }
                 System.out.println();
             }
-        }
-        else {
+        } else {
             System.out.println("not possible");
         }
     }
