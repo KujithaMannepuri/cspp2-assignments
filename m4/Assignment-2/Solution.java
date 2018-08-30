@@ -5,12 +5,17 @@ import java.util.Scanner;
  */
 public class Solution {
     /* Fill the main function to print resultant of addition of matrices*/
-    public static void main(String[] args) {
+    /**
+     * main function.
+     *
+     * @param args The argument
+     */
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int row1 = sc.nextInt();
         int col1 = sc.nextInt();
-        int add[][] = new int[row1][col1];
-        int mat1[][] = new int[row1][col1];
+        int[][] add = new int[row1][col1];
+        int[][] mat1 = new int[row1][col1];
         for (int i = 0; i < row1; i++) {
             for (int j = 0; j < col1; j++) {
                 mat1[i][j] = sc.nextInt();
@@ -18,7 +23,7 @@ public class Solution {
         }
         int row2 = sc.nextInt();
         int col2 = sc.nextInt();
-        int mat2[][] = new int[row2][col2];
+        int[][] mat2 = new int[row2][col2];
         for (int i = 0; i < row2; i++) {
             for (int j = 0; j < col2; j++) {
                 mat2[i][j] = sc.nextInt();
@@ -36,8 +41,6 @@ public class Solution {
                 System.out.println();
             }
         }
-    else {
-        System.out.println("not possible");
-    }
+    else  System.out.println("not possible");
     }
 }
