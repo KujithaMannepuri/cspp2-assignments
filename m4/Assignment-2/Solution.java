@@ -4,6 +4,11 @@ import java.util.Scanner;
  * Class for solution.
  */
 public class Solution {
+    /**
+     * constructor.
+     */
+    private Solution() {
+    }
     /* Fill the main function to print resultant of addition of matrices*/
     /**
      * main function.
