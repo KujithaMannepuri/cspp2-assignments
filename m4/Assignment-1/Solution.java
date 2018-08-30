@@ -1,13 +1,16 @@
 
-import java.util.*;
-public class Solution {/*
+import java.util.Scanner;
+/**
+ * Class for solution.
+ */
+public class Solution { /*
 	Fill this main function to print maximum of given array
 	*/
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		// System.out.println("Enter size of the array:");
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		int ary[];
+		int[] ary;
 		int max = 0;
 		ary = new int[n];
 		// System.out.println("please enter elements of array:");
