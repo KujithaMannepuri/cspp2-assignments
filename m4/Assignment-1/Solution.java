@@ -6,6 +6,12 @@ import java.util.Scanner;
 public class Solution { /*
 	Fill this main function to print maximum of given array
 	*/
+
+	/**
+	 * main function description 
+	 *
+	 * @param args arguments
+	 */
 	public static void main(final String[] args) {
 		// System.out.println("Enter size of the array:");
 		Scanner sc = new Scanner(System.in);
