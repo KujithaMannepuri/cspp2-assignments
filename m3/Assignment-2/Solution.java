@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 /*
     Do not modify this main function.
@@ -24,17 +23,22 @@ public final class Solution {
         int n = s.nextInt();
         int j = 1;
         int count = 0;
-        final int ten = 10;
-        final int seven = 7;
+        final int a = 10;
+        final int b = 7;
         for (int i = 1; i <= n; i++) {
             j = i;
             while (j != 0) {
-                if (j % ten == seven) {
+                if (j % a == b) {
                     count++;
                 }
-                j = j / ten;
+                j = j / a;
             }
         }
         System.out.println(count);
     }
 }
+
+
+
+
+
