@@ -6,18 +6,18 @@ public class Solution
 	*/
 	public static void main(String[] args)
 	{
-		System.out.println("Enter size of the array:");
+		// System.out.println("Enter size of the array:");
 		Scanner sc=new Scanner(System.in);
 		int n= sc.nextInt();
 		int ary[];
 		int max = 0;
 		ary = new int[n];
-		System.out.println("please enter elements of array:");
+		// System.out.println("please enter elements of array:");
 		for(int i=0;i<n;i++){
-			ary[i] = new Scanner(System.in).nextInt();
+			ary[i] = sc.nextInt();
 		}
+		max = ary[0];
 		for(int i=0;i<n;i++){
-			max = ary[0];
 			if (max < ary[i]){
 				max = ary[i];
 			}
