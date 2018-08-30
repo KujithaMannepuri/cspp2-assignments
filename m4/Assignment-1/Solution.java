@@ -3,7 +3,14 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution { /*
+public class Solution { 
+    /**
+     * constructor.
+     */
+    private Solution() { 
+        //constructor
+    }
+/*
     Fill this main function to print maximum of given array
     */
     /**
