@@ -3,11 +3,11 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution { 
+public final class Solution {
     /**
      * constructor.
      */
-    private Solution() { 
+    private Solution() {
         //constructor
     }
 /*
