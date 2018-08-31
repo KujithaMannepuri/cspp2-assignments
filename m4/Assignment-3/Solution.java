@@ -14,12 +14,12 @@ public class Solution
 		//sc.nextLine();
 		for(int i = 0; i < n; i++) {
 			String s = sc.nextLine();
-			// String res=binaryToDecimal(s);//Write binaryToDecimal function
-			 //System.out.println(res);
-			System.out.println(binaryToDecimal(s));
+			String res=binaryToDecimal(s);//Write binaryToDecimal function
+			System.out.println(res);
+			// System.out.println(binaryToDecimal(s));
 		}
 	}
-		static int binaryToDecimal(String s) {
+		static String binaryToDecimal(String s) {
 			int val = 0;
 			int base = 1;
 			for (int i = s.length() - 1; i >= 0; i--){
@@ -27,6 +27,6 @@ public class Solution
 					val = val + base;
 				base = base * 2;
 			}
-			return val;
+			return val+"";
 		}
 }
