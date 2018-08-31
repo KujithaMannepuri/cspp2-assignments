@@ -19,6 +19,14 @@ public class Solution { /*
         System.out.println(reverse);
     }
     //Write reverseString function
+
+    /**
+     * function of reverse string.
+     *
+     * @param s { parameter_description }
+     *
+     * @return description_of_the_return_value.
+     */
     static String reverseString(final String s) {
         String rev = "";
         // char[] s1 = input.toCharArray();
