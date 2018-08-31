@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {/*
+public final class Solution {/*
 	Do not modify this main function.
 	*/
 	/**
@@ -17,13 +17,13 @@ public class Solution {/*
 	 *
 	 * @param args The arguments
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.nextLine());
 		//sc.nextLine();
-		for(int i = 0; i < n; i++) {
+		for (int i = 0; i < n; i++) {
 			String s = sc.nextLine();
-			String res=binaryToDecimal(s);//Write binaryToDecimal function
+			String res = binaryToDecimal(s); //Write binaryToDecimal function
 			System.out.println(res);
 		}
 	}
@@ -31,10 +31,11 @@ public class Solution {/*
 			int val = 0;
 			int base = 1;
 			for (int i = s.length() - 1; i >= 0; i--) {
-				if (s.charAt(i) == '1')
+				if (s.charAt(i) == '1') {
 					val = val + base;
+				}
 				base = base * 2;
 			}
-			return val+"";
+			return val + "";
 		}
 }
