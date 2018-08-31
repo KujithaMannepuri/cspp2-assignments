@@ -27,6 +27,14 @@ public final class Solution { /*
             System.out.println(res);
         }
     }
+
+        /**
+         * binary to decimal function.
+         *
+         * @param s { parameter_description }
+         *
+         * @return { description_of_the_return_value }
+         */
         static String binaryToDecimal(final String s) {
             int val = 0;
             int base = 1;
