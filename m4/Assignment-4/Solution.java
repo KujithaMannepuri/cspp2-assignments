@@ -9,6 +9,10 @@ public class Solution { /*
     Do not modify the main function.
     */
     /**
+    * Constructor.
+    */
+    private Solution() { }
+    /**
      * main function.
      *
      * @param args The arguments
