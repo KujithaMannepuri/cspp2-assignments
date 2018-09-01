@@ -27,16 +27,12 @@ final class Solution {
         final char oldChar, final char newChar) {
 	// write your code here
 
-        // for (int ele = 0; ele < charArray.length; ele++) {
-        //     if (charArray[ele] == oldChar) {
-        //         charArray[ele] = newChar;
-        //     }
-        // }
-            for(char ele : charArray) {
-                if(ele == oldChar) {
-                    ele = newChar;
-                }
+        for (int ele = 0; ele < charArray.length; ele++) {
+            if (charArray[ele] == oldChar) {
+                charArray[ele] = newChar;
             }
+        }
+            
         return charArray;
     }
     /**
