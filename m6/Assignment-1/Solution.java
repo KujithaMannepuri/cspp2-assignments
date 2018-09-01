@@ -15,15 +15,15 @@ public final class Solution {
     /**
      * Prints the odd composite numbers between 2 and n.
      *
-     * @param      n     n value
+     * @param n n value
      */
     static void oddComposites(final int n) {
 	// write your code here
-        for (int i=2;i<=n;i++){
+        for (int i = 2; i <= n; i++) {
             int count = 0;
-            if (i%2 != 0){
-                for(int j=2;j<=i;j++){
-                    if (i%j == 0){
+            if (i % 2 != 0) {
+                for(int j = 2; j <= i; j++) {
+                    if ( i % j == 0){
                         count++;
                     }
                 }  
