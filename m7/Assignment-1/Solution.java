@@ -34,6 +34,12 @@ class InputValidator {
  * { class for solution. }
  */
 public final class Solution {
+    /**
+     * constructor.
+     */
+    private Solution() {
+
+    }
 /**
  * { main function. }
  *
