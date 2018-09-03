@@ -1,10 +1,8 @@
 import java.util.Scanner;
-
 /**
  * Class for input validator.
  */
-class InputValidator
-{
+class InputValidator {
 	/*Write the atrributes and methods for InputValidator*/
 	private String input;
 	InputValidator(final String str) {
@@ -24,16 +22,12 @@ class InputValidator
 	}
 }
 
-public final class Solution
-{
+public final class Solution {
 
-	public static void main(String[] args)
-    {
+	public static void main(String[] args) {
     	Scanner s = new Scanner(System.in);
     	String input = s.next();
     	InputValidator i = new InputValidator(input);    	
     	System.out.println(i.validateData());
-
     }
-
 }
