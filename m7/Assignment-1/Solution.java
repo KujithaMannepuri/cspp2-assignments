@@ -33,7 +33,7 @@ class InputValidator {
 /**
  * { class for solution. }
  */
-final class Solution {
+class Solution {
 /**
  * { main function. }
  *
