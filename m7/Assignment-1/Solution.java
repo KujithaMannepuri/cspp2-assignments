@@ -4,7 +4,15 @@ import java.util.Scanner;
  */
 class InputValidator {
 	/*Write the atrributes and methods for InputValidator*/
+	/**
+	 * { var_description. }
+	 */
 	private String input;
+	/**
+	 * constructor.
+	 *
+	 * @param      str   The string
+	 */
 	InputValidator(final String str) {
 		this.input = str;
 	}
@@ -16,18 +24,25 @@ class InputValidator {
 	boolean validateData() {
 		int length1 = input.length();
 		final int length2 = 6;
-		if (length1 >= length2)
+		if (length1 >= length2) {
 			return true;
+		}
 		return false;
 	}
 }
-
+/**
+ * { class for solution. }
+ */
 public final class Solution {
-
-	public static void main(String[] args) {
+/**
+ * { main function. }
+ *
+ * @param      args  The arguments
+ */
+	public static void main(final String[] args) {
     	Scanner s = new Scanner(System.in);
     	String input = s.next();
-    	InputValidator i = new InputValidator(input);    	
+    	InputValidator i = new InputValidator(input);  	
     	System.out.println(i.validateData());
     }
 }
