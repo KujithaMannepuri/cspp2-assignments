@@ -31,6 +31,9 @@ public class List {
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
+   /**
+    * array named list.
+    */
     private int[] list;
     /*
      * What are the other class variables needed for creating a list?
@@ -157,8 +160,7 @@ public class List {
             }
             list[size] = 0;
             size = size - 1;
-        }
-        else {
+        } else {
             System.out.println("Invalid Position Exception"); 
         }
     }
@@ -240,7 +242,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
