@@ -154,7 +154,7 @@ public class List {
         if(index>=0 && index < size) {
         	return list[index];
         }
-        return -1;
+      	return -1;
     }
 
     /*
@@ -254,7 +254,7 @@ public class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
                 case "get":
-                if (l.get(Integer.parseInt(tokens[1])) != 1)
+                if (l.get(Integer.parseInt(tokens[1])) != -1)
                 System.out.println(l.get(Integer.parseInt(tokens[1])));
                 break;
                 case "contains":
