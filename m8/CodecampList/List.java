@@ -58,6 +58,9 @@ public class List {
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    /**
+    * size of list.
+    */
     private int size;
     //private final int ten = 10;
     /*
@@ -101,7 +104,7 @@ public class List {
      *
      * @param      item  The item
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         list[size] = item;
         size = size + 1;
@@ -184,7 +187,7 @@ public class List {
      *
      * @return     return_value
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index >= 0 && index < size) {
             return list[index];
@@ -265,7 +268,7 @@ public class List {
      *
      * @return return_value
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
@@ -280,7 +283,7 @@ public class List {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
