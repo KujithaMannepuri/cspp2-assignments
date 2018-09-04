@@ -61,7 +61,6 @@ public class List {
     * size of list.
     */
     private int size;
-    
     /*
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
