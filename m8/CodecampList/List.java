@@ -54,6 +54,7 @@ public class List {
     // again, don't initialize it here
     // variable initialization should be done in the constructor
     private int size;
+    //private final int ten = 10;
     /*
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
@@ -183,7 +184,7 @@ public class List {
         for (int i = 0; i < size - 1; i++) {
         	strng = strng + list[i] + ",";
         }
-        strng = strng + list[size-1] + "]";
+        strng = strng + list[size - 1] + "]";
         return strng;
     } 
     
@@ -210,7 +211,7 @@ public class List {
      */
     public int indexOf(int item) {
         // Replace the code below
-        for (int i=0; i<size; i++) {
+        for (int i = 0; i < size; i++) {
         	if (list[i] == item) {
         		return i;
         	}
@@ -218,6 +219,11 @@ public class List {
         return -1;
     }
 
+	/**
+	 * main function.
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
@@ -254,8 +260,9 @@ public class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
                 case "get":
-                if (l.get(Integer.parseInt(tokens[1])) != -1)
+                if (l.get(Integer.parseInt(tokens[1])) != -1) {
                 System.out.println(l.get(Integer.parseInt(tokens[1])));
+            }
                 break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
