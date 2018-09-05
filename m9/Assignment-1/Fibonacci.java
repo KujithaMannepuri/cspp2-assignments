@@ -28,7 +28,15 @@ public class Fibonacci {
      *
      * Look for the hint.txt if some of the testcases fail.
      */
-    public static List fib(int n) {
+
+    /**
+     * { function_description }
+     *
+     * @param n number of fibonocci series.
+     *
+     * @return    returns the list.
+     */
+    public static List fib(final int n) {
         // todo - complete this method
         int n1 = 0, n2 = 1, fibo = 0;
         List arr = new List();
@@ -50,7 +58,7 @@ public class Fibonacci {
      *
      * @param args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         System.out.println(fib(n));
