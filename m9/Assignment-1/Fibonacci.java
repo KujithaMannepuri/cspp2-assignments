@@ -20,7 +20,7 @@ import java.util.Scanner;
 /**
  * Class for fibonacci.
  */
-public class Fibonacci {
+public final class Fibonacci {
     /*
      * fib is a static method takes a argument n
      * n is the count of the fibonacci numbers to be generated.
@@ -28,7 +28,6 @@ public class Fibonacci {
      *
      * Look for the hint.txt if some of the testcases fail.
      */
-    
     /**
      * fibonacci constructor.
      */
