@@ -30,6 +30,7 @@ public class Fibonacci
         // todo - complete this method
         int n1=0,n2=1,fibo=0;
         List arr = new List();
+        arr.List(n);
             arr.add(n1);
             arr.add(n2);
             for (int i=2;i<n;i++) {
