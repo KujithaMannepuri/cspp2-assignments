@@ -31,7 +31,7 @@ public final class Fibonacci {
     /**
      * fibonacci constructor.
      */
-    public Fibonacci() {
+    private Fibonacci() {
 
     }
     /**
