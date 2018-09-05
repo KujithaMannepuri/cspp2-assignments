@@ -30,7 +30,7 @@ public class Fibonacci {
      */
 
     /**
-     * { function_description }
+     * fibonocci function.
      *
      * @param n number of fibonocci series.
      *
@@ -48,12 +48,12 @@ public class Fibonacci {
                 // fibo = arr.get(i-1)+ arr.get(i-2);
                 n1 = n2;
                 n2 = fibo;
-                arr.add(fibo);   
+                arr.add(fibo);
             }
         return arr;
     }
 
-	/**
+    /**
      * main function.
      *
      * @param args  The arguments
