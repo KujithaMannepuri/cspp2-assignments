@@ -28,7 +28,13 @@ public class Fibonacci {
      *
      * Look for the hint.txt if some of the testcases fail.
      */
+    
+    /**
+     * fibonacci constructor.
+     */
+    public Fibonacci() {
 
+    }
     /**
      * fibonocci function.
      *
