@@ -317,7 +317,7 @@ public class List {
     }
 
     /*
-     * Returns the index of the first occurrence 
+     * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
@@ -331,8 +331,9 @@ public class List {
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
-            if (item == list[i])
+            if (item == list[i]) {
                 return i;
+            }
         }
         return -1;
     }
@@ -360,7 +361,7 @@ public class List {
      * @param index  The index
      * @param item   The item
      */
-    public void add(final int index,final int item) {
+    public void add(final int index, final int item) {
          // write the logic
         for (int i = size; i > index; i--) {
             list[i] = list[i - 1];
