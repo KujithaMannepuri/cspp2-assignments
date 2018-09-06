@@ -141,8 +141,8 @@ public class StringList implements StringListInterface{
 		if (items.length + size > list.length) {
             resize();
         }
-        for (String i : items) {
-            list[size++] = i;
+        for (int i = 0; i < items.length; i++) {
+            add(items[i]);
         }
               
 	}
