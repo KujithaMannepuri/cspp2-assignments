@@ -8,13 +8,12 @@ class Student {
      * var_description.
      **/
     private String name;
-    
     /**
      * Constructs the object.
      *
      * @param      name1  The name
      **/
-    public Student(final String name1) {
+    Student(final String name1) {
     //A constructor used to initialize the instance variables
         this.name = name1;
     }
@@ -31,9 +30,9 @@ class Student {
      * Constructs the object.
      * @return  the name.
      **/
-    // private Hashcode() {
-    //  return 0;
-    // }
+    public int hashCode() {
+     return 0;
+    }
     /**
      * function_description.
      *
@@ -70,8 +69,6 @@ final class Solution {
      * Constructs the object.
      **/
     private Solution() { }
-    
-
     /**
      * function_description.
      *
@@ -199,7 +196,7 @@ final class Solution {
                         case "addAll":
                         if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
-                        Float temp[] = new Float[t1.length];
+                        Float[] temp = new Float[t1.length];
                         for (int i = 0; i < t1.length; i++) {
                             temp[i] = Float.parseFloat(t1[i]);
                         }
@@ -297,7 +294,7 @@ final class Solution {
                     // read the line
                     String line = stdin.nextLine();
                     // split the line using space
-                    String[] tokens = line.split(" ");               
+                    String[] tokens = line.split(" ");
                     switch (tokens[0]) {
                         case "add":
                             listDouble.add(Double.parseDouble(tokens[1]));
@@ -306,7 +303,7 @@ final class Solution {
                         if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Double[] temp = new Double[t1.length];
-                        for (int i = 0; i < t1.length ; i++) {
+                        for (int i = 0; i < t1.length; i++) {
                             temp[i] = Double.parseDouble(t1[i]);
                         }
                         listDouble.addAll(temp);
@@ -318,7 +315,7 @@ final class Solution {
                         // it is the number of items in the list
                         System.out.println(listDouble.size());
                         break;
-                        case "print":        
+                        case "print":
                         //for this to work)
                         // expected format is [item-1,item-2,...,item-n]
                         // review the output testcase file
