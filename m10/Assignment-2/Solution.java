@@ -5,10 +5,16 @@ import java.util.Scanner;
  * Class for solution.
  */
 public class Solution {
+/**
+ * Constructs the object.
+ */
+    public Solution() {
+
+    }
     /**
      * main function.
      *
-     * @param      args  The arguments
+     * @param args  The arguments
      */
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
