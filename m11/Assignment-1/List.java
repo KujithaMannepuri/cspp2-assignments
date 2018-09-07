@@ -246,26 +246,27 @@ public class List {
     public List subList(int start, int end) 
     {
     // write the logic for subList
-    	List list2 = new List();
-    	if (start >= 0 && end < size && start < end) {
-    		for (int i = start; i < end; i++) {
-    			list2.add(list[i]);
-    		}
-    		return list2;
-    	} else {
-    		System.out.println("Index Out of Bounds Exception");
-    		return null;
-    	}
-    // return new List();
-    	// if (start < 0 || end > size) {
-    	// 	System.out.println("Index Out of Bounds Exception");
-    	// 	return null;
-    	// } else {
+    	// List list2 = new List();
+    	// if (start >= 0 && end < size && start < end) {
     	// 	for (int i = start; i < end; i++) {
     	// 		list2.add(list[i]);
     	// 	}
     	// 	return list2;
+    	// } else {
+    	// 	System.out.println("Index Out of Bounds Exception");
+    	// 	return null;
     	// }
+    // return new List();
+    	List list2 = new List();
+    	if (size == 0 || start > end || start < 0 || end > size || end < 0) {
+    		System.out.println("Index Out of Bounds Exception");
+    		return null;
+    	} else {
+    		for (int i = start; i < end; i++) {
+    			list2.add(list[i]);
+    		}
+    		return list2;
+    	}
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
