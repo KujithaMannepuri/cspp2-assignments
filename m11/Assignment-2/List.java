@@ -46,9 +46,9 @@ public class List<E> {
     array to the end of list*/
     public void addAll(E[] items) {
         //Write logic for addAll method
-        if (items.length + size > list.length) {
-            resize();
-        }
+        // if (items.length + size > list.length) {
+        //     resize();
+        // }
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
@@ -96,6 +96,7 @@ public class List<E> {
             for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
             }
+            list[size - 1] = null;
             size--;
         } else {
             System.out.println("Invalid Position Exception");
@@ -151,7 +152,7 @@ public class List<E> {
         for (i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
         }
-        str = str + list[i] + "]";
+        str = str + list[size - 1] + "]";
         return str;
     }
     /*
