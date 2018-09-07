@@ -204,16 +204,43 @@ public class List<E> {
      indicates the startIndex and the second parameter
      indicates the endIndex.
      */
-    public List subList(int n, int n2) {
-        List <E> list1 = new List(n2 - n);
-        if (n == 0 || n > n2 || n < 0 || n2 > n || n2 < 0) {
+    // public List subList(int n, int n2) {
+    //     List <E> list1 = new List(n2 - n);
+    //     if (n == 0 || n > n2 || n < 0 || n2 > n || n2 < 0) {
+    //         System.out.println("Index Out of Bounds Exception");
+    //         return null;
+    //     }
+    //     // for (int i = n; i < n2; i++) {
+    //     //     list1.add(list[i]);
+    //     // }
+    //     for (int i = n; i < n2; i++) {
+    //         list1.add(this.get(i));
+    //     }
+    //     return list1;
+    // }
+        public List subList(int start, int end) {
+        if (start < 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
-        // for (int i = n; i < n2; i++) {
-        //     list1.add(list[i]);
-        // }
-        for (int i = n; i < n2; i++) {
+        if (end < 0) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if (start > end) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if (end > size()) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if (start == end) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        List<E> list1 = new List();
+        for (int i = start; i < end; i++) {
             list1.add(this.get(i));
         }
         return list1;
