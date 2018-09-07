@@ -204,7 +204,7 @@ public class List<E> {
      indicates the endIndex.
      */
     public List subList(int n, int n2) {
-        List <E> list1 = new List();
+        List <E> list1 = new List(n2 - n);
         if (n == 0 || n > n2 || n < 0 || n2 > n || n2 < 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
