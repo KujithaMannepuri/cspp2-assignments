@@ -378,7 +378,7 @@ public class List {
      *
      * @return returns true if lists are equal.
      */
-    public boolean equals (final List list1 ) {
+    public boolean equals(final List list1) {
     // Replace the code below
         return Arrays.equals(list1.list, list);
     }
