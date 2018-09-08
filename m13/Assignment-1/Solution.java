@@ -60,17 +60,8 @@ class Set {
     	// } else {
     	// 	resize();
     	if (size < set.length) {
-    		if (size == 0) {
-    			set[size++] = item;
-    		}
-    		else {
-    			for (int i = 0; i < size; i++) {
-    				if (set[i] != item) {
     					set[size++] = item;
     				}
-    			}
-    		}
-    	}
     	else {
     			resize();
     		}
