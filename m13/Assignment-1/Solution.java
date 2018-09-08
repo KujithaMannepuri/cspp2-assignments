@@ -12,15 +12,30 @@ class Set {
     private int[] set;
     private int size;
 
+    /**
+     * Constructs the object.
+     */
     public Set() {
     	set = new int [10];
     	size = 0;
     }
 
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int size() {
     	return size;
     }
 
+    /**
+     * { function_description }
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean contains(final int item) {
     	for (int i = 0; i < size; i++) {
     		if (item == set[i]) {
@@ -30,6 +45,11 @@ class Set {
     	return false;
     }
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
     	if (size == 0) {
     		return "{}";
@@ -43,10 +63,18 @@ class Set {
     	return str;
     }
 
+    /**
+     * { function_description }
+     */
     private void resize() {
     	set = Arrays.copyOf(set, set.length * 2);
     }
 
+    /**
+     * { function_description }
+     *
+     * @param      item  The item
+     */
     public void add (final int item) {
     	//if (size < set.length) {
     		// for (int i = 0; i < size; i++) {
@@ -66,13 +94,25 @@ class Set {
     			resize();
     		}
     }
-    
+
+    /**
+     * { function_description }
+     *
+     * @param      arr   The arr
+     */
     public void add (int[] arr) {
     	for (int items : arr) {
     		add(items);
     	}
     }
 
+    /**
+     * { function_description }
+     *
+     * @param      set1  The set 1
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Set intersection (Set set1) {
     	Set set2 = new Set();
     	// for (int i = 0; i < set.length; i++) {
@@ -85,6 +125,13 @@ class Set {
     	return set2;
     }
 
+    /**
+     * { function_description }
+     *
+     * @param      arr   The arr
+     *
+     * @return     { description_of_the_return_value }
+     */
     public Set retainAll (final int[] arr) {
     	Set set1 = new Set();
     	for (int i = 0;i < set.length; i++) {
@@ -97,7 +144,7 @@ class Set {
     	return set1;
     }
 
-  public int[][] cartesianProduct (Set set1, Set set2) {
+  public int[] cartesianProduct (Set set1, Set set2) {
   // //   	Set l1 = new List();
 		// // for (int i = 0; i < set1.length; i++) {
 		// // 	for (int j = 0; j < set2.length; j++) {
