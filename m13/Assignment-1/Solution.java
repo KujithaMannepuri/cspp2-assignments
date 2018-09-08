@@ -48,19 +48,18 @@ class Set {
     }
 
     public void add (final int item) {
-    	if (size < set.length) {
+    	//if (size < set.length) {
     		for (int i = 0; i < size; i++) {
     			if (set[i] != item) {
     				set[size++] = item; 
     			}
-    			else if (size == 0) {
+    			else {
     				set[size++] = item;
     			}
     		}
-    	} else {
-    		resize();
+    	// } else {
+    	// 	resize();
     	}
-    }
 
     public void add (int[] arr) {
     	for (int items : arr) {
