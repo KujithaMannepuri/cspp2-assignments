@@ -49,8 +49,8 @@ class Set {
 
     public void add (int item) {
     	if (size < set.length) {
-    		for (int i : set) {
-    			if (i != item) {
+    		for (int i = 0; i < size; i++) {
+    			if (set[i] != item) {
     				set[size++] = item; 
     			}
     		}
