@@ -49,7 +49,11 @@ class Set {
 
     public void add (int item) {
     	if (size < set.length) {
-    		set[size++] = item; 
+    		for (int i = 0;i < size; i++) {
+    			if (set[i] != item) {
+    				set[size++] = item; 
+    			}
+    		}
     	} else {
     		resize();
     	}
@@ -62,19 +66,15 @@ class Set {
     }
 
     public Set intersection (Set set1) {
-    	// List[] arr = new List();
-    	// for (int i = 0; i < set1.length; i++) {
-    	// 	arr.add(set1[i]);
-    	// } 
-    	// Set set2 = new Set();
+    	Set set2 = new Set();
     	// for (int i = 0; i < set.length; i++) {
-    	// 	for (int j = 0; j < arr.length; i++) {
-    	// 		if (set[i] == arr[j]) {
+    	// 	for (int j = 0; j < set1.length; i++) {
+    	// 		if (set[i] == set1[j]) {
     	// 			set2.add(set[i]);
     	// 		}
     	// 	}
     	// }
-    	return set1;
+    	return set2;
     }
 
     public Set retainAll (int[] arr) {
