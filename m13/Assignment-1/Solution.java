@@ -21,7 +21,7 @@ class Set {
     	return size;
     }
 
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
     	for (int i = 0; i < size; i++) {
     		if (item == set[i]) {
     			return true;
@@ -47,11 +47,14 @@ class Set {
     	set = Arrays.copyOf(set, set.length * 2);
     }
 
-    public void add (int item) {
+    public void add (final int item) {
     	if (size < set.length) {
     		for (int i = 0; i < size; i++) {
     			if (set[i] != item) {
     				set[size++] = item; 
+    			}
+    			else if (size == 0) {
+    				set[size++] = item;
     			}
     		}
     	} else {
@@ -77,7 +80,7 @@ class Set {
     	return set2;
     }
 
-    public Set retainAll (int[] arr) {
+    public Set retainAll (final int[] arr) {
     	Set set1 = new Set();
     	for (int i = 0;i < set.length; i++) {
     		for (int j = 0; j < arr.length; j++) {
