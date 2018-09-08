@@ -60,8 +60,8 @@ class Set {
     	// } else {
     	// 	resize();
     	if (size < set.length) {
-    					set[size++] = item;
-    				}
+    		set[size++] = item;
+    		}
     	else {
     			resize();
     		}
@@ -97,15 +97,15 @@ class Set {
     	return set1;
     }
 
-  //   public int[][] cartesianProduct (Set set1, Set set2) {
+  public int[][] cartesianProduct (Set set1, Set set2) {
   // //   	Set l1 = new List();
 		// // for (int i = 0; i < set1.length; i++) {
 		// // 	for (int j = 0; j < set2.length; j++) {
 		// // 		l1.add(set1[i],set2[j]);
 		// // 	}
 		// // }   
-		// return ;
-  //   }
+		return null;
+     }
 
 }
 /**
