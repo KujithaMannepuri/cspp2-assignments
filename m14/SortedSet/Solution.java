@@ -154,6 +154,7 @@ public final class Solution {
                 		arr1[i] = Integer.parseInt(arr[i]);
                 	}
                 	s.addAll(arr1);
+                break;
                 // case "intersection":
                 // s = new SortedSet();
                 // SortedSet t = new SortedSet();
