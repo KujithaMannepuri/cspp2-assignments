@@ -115,7 +115,6 @@ public class Set {
      * @return the integer value indicates the number of elements.
      */
     public int size() {
-        System.out.println(size);
         return size;
     }
 
