@@ -1,6 +1,9 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
+/**
+ * Class for sorted set.
+ */
 class SortedSet extends Set {
 	private int[] sortedset;
 	private int size;
@@ -9,9 +12,25 @@ class SortedSet extends Set {
 		size = 0;
 	}
 	@Override
+
+	/**
+	 * boolean function.
+	 *
+	 * @param      item  The item
+	 *
+	 * @return     returns true if the item is in set.
+	 */
 	public boolean contains(final int item) {
         return indexOf(item) != -1;
     }
+
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return    returns first match.
+     */
     @Override
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
@@ -21,20 +40,26 @@ class SortedSet extends Set {
         }
         return -1;
     }
+
+	/**
+	 * add function.
+	 *
+	 * @param      item  The item
+	 */
 	@Override
 	public void add (int item) {
-		int temp=0;
+		int temp = 0;
 		if (size == 0) {
 			sortedset[size++] = item; 
 		}
 		else {
-				if(!contains(item)){
+				if (!contains(item)) {
 					sortedset[size++] = item;
 				}
 			for (int i = 0; i < size; i++) {
-				for(int j=i+1;j<size;j++) {
-					if(sortedset[i]>sortedset[j]) {
-						temp=sortedset[i];
+				for (int j = i + 1; j < size; j++) {
+					if (sortedset[i] > sortedset[j]) {
+						temp = sortedset[i];
 						sortedset[i] = sortedset[j];
 						sortedset[j] = temp;
 					}
@@ -43,13 +68,22 @@ class SortedSet extends Set {
 			}
 		}
 
-	public Set subSet(int start, int end) {
+
+	/**
+	 * subset function.
+	 *
+	 * @param      start  The start
+	 * @param      end    The end
+	 *
+	 * @return    returns subset.
+	 */
+	public Set subSet(final int start, final int end) {
 		Set s = new Set();
 		if (start <= end) {
             Set s2 = new Set();
             s2 = headSet(end);
             for (int i = 0; i < s2.size(); i++) {
-                if(sortedset[i] >= start) {
+                if (sortedset[i] >= start) {
                     s.add(sortedset[i]);
                 }
             }
@@ -59,7 +93,14 @@ class SortedSet extends Set {
         return null;
 	 }
 
-	 public Set headSet(int item) {
+	 /**
+	  * headset function.
+	  *
+	  * @param      item  The item
+	  *
+	  * @return    returning a set.
+	  */
+	 public Set headSet(final int item) {
 	 	Set set1 = new Set();
         for (int i = 0; i < size; i++) {
             if(sortedset[i] < item) {
@@ -69,6 +110,12 @@ class SortedSet extends Set {
         return set1;
 	 }
 
+
+	 /**
+	  * function last.
+	  *
+	  * @return    returns last digit in set.
+	  */
 	 public int last() {
         if (size > 0) {
             return sortedset[size - 1];
@@ -76,6 +123,12 @@ class SortedSet extends Set {
         System.out.println("Set Empty Exception");
         return -1;
     }
+
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     @Override
     public String toString() {
         if (size == 0) {
@@ -90,6 +143,9 @@ class SortedSet extends Set {
     }
 
 }
+/**
+ * { item_description }.
+ */
 public final class Solution {
     /**
      * Constructs the object.
