@@ -40,7 +40,6 @@ class SortedSet extends Set {
 					}
 				}
 				}
-				System.out.println(size);
 			}
 		}
 
