@@ -57,12 +57,11 @@ class SortedSet extends Set {
 	 * @param      item  The item
 	 */
 	@Override
-	public void add (int item) {
+	public void add (final int item) {
 		int temp = 0;
 		if (size == 0) {
-			sortedset[size++] = item; 
-		}
-		else {
+			sortedset[size++] = item;
+		} else {
 				if (!contains(item)) {
 					sortedset[size++] = item;
 				}
@@ -113,7 +112,7 @@ class SortedSet extends Set {
 	 public Set headSet(final int item) {
 	 	Set set1 = new Set();
         for (int i = 0; i < size; i++) {
-            if(sortedset[i] < item) {
+            if (sortedset[i] < item) {
                 set1.add(sortedset[i]);
             }
         }
@@ -244,7 +243,7 @@ public final class Solution {
                 // s.add(intArray);
                 // intArray = intArray(tokens[2]);
                 // t.add(intArray);
-                // System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+   // System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
                 // break;
                 case "subSet":
                 String[] values = tokens[1].split(",");
