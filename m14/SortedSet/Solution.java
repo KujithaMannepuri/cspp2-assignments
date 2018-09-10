@@ -5,10 +5,20 @@ import java.util.Arrays;
  * Class for sorted set.
  */
 class SortedSet extends Set {
+	/**
+	 * sortedset array.
+	 */
 	private int[] sortedset;
+	/**
+	 * size.
+	 */
 	private int size;
+	/**
+	 * constructor.
+	 */
 	public SortedSet() {
-		sortedset = new int[10];
+		final int ten = 10;
+		sortedset = new int[ten];
 		size = 0;
 	}
 	@Override
