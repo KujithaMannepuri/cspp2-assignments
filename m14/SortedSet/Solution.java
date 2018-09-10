@@ -5,32 +5,32 @@ import java.util.Arrays;
  * Class for sorted set.
  */
 class SortedSet extends Set {
-	/**
-	 * sortedset array.
-	 */
-	private int[] sortedset;
-	/**
-	 * size.
-	 */
-	private int size;
-	/**
-	 * constructor.
-	 */
-	 SortedSet() {
-		final int ten = 10;
-		sortedset = new int[ten];
-		size = 0;
-	}
-	@Override
+    /**
+     * sortedset array.
+     */
+    private int[] sortedset;
+    /**
+     * size.
+     */
+    private int size;
+    /**
+     * constructor.
+     */
+     SortedSet() {
+        final int ten = 10;
+        sortedset = new int[ten];
+        size = 0;
+    }
+    @Override
 
-	/**
-	 * boolean function.
-	 *
-	 * @param      item  The item
-	 *
-	 * @return     returns true if the item is in set.
-	 */
-	public boolean contains(final int item) {
+    /**
+     * boolean function.
+     *
+     * @param      item  The item
+     *
+     * @return     returns true if the item is in set.
+     */
+    public boolean contains(final int item) {
         return indexOf(item) != -1;
     }
 
@@ -51,44 +51,44 @@ class SortedSet extends Set {
         return -1;
     }
 
-	/**
-	 * add function.
-	 *
-	 * @param      item  The item
-	 */
-	@Override
-	public void add (final int item) {
-		int temp = 0;
-		if (size == 0) {
-			sortedset[size++] = item;
-		} else {
-				if (!contains(item)) {
-					sortedset[size++] = item;
-				}
-			for (int i = 0; i < size; i++) {
-				for (int j = i + 1; j < size; j++) {
-					if (sortedset[i] > sortedset[j]) {
-						temp = sortedset[i];
-						sortedset[i] = sortedset[j];
-						sortedset[j] = temp;
-					}
-				}
-				}
-			}
-		}
+    /**
+     * add function.
+     *
+     * @param      item  The item
+     */
+    @Override
+    public void add(final int item) {
+        int temp = 0;
+        if (size == 0) {
+            sortedset[size++] = item;
+        } else {
+                if (!contains(item)) {
+                    sortedset[size++] = item;
+                }
+            for (int i = 0; i < size; i++) {
+                for (int j = i + 1; j < size; j++) {
+                    if (sortedset[i] > sortedset[j]) {
+                        temp = sortedset[i];
+                        sortedset[i] = sortedset[j];
+                        sortedset[j] = temp;
+                    }
+                }
+                }
+            }
+        }
 
 
-	/**
-	 * subset function.
-	 *
-	 * @param      start  The start
-	 * @param      end    The end
-	 *
-	 * @return    returns subset.
-	 */
-	public Set subSet(final int start, final int end) {
-		Set s = new Set();
-		if (start <= end) {
+    /**
+     * subset function.
+     *
+     * @param      start  The start
+     * @param      end    The end
+     *
+     * @return    returns subset.
+     */
+    public Set subSet(final int start, final int end) {
+        Set s = new Set();
+        if (start <= end) {
             Set s2 = new Set();
             s2 = headSet(end);
             for (int i = 0; i < s2.size(); i++) {
@@ -100,32 +100,32 @@ class SortedSet extends Set {
         }
         System.out.println("Invalid Arguments to Subset Exception");
         return null;
-	 }
+     }
 
-	 /**
-	  * headset function.
-	  *
-	  * @param      item  The item
-	  *
-	  * @return    returning a set.
-	  */
-	 public Set headSet(final int item) {
-	 	Set set1 = new Set();
+     /**
+      * headset function.
+      *
+      * @param      item  The item
+      *
+      * @return    returning a set.
+      */
+     public Set headSet(final int item) {
+        Set set1 = new Set();
         for (int i = 0; i < size; i++) {
             if (sortedset[i] < item) {
                 set1.add(sortedset[i]);
             }
         }
         return set1;
-	 }
+     }
 
 
-	 /**
-	  * function last.
-	  *
-	  * @return    returns last digit in set.
-	  */
-	 public int last() {
+     /**
+      * function last.
+      *
+      * @return    returns last digit in set.
+      */
+     public int last() {
         if (size > 0) {
             return sortedset[size - 1];
         }
@@ -213,12 +213,12 @@ public final class Solution {
                     s.add(Integer.parseInt(tokens[1]));
                 break;
                 case "addAll":
-                	String[] arr = tokens[1].split(",");
-                	int[] arr1 = new int[arr.length];
-                	for (int i = 0; i < arr.length; i++) {
-                		arr1[i] = Integer.parseInt(arr[i]);
-                	}
-                	s.addAll(arr1);
+                    String[] arr = tokens[1].split(",");
+                    int[] arr1 = new int[arr.length];
+                    for (int i = 0; i < arr.length; i++) {
+                        arr1[i] = Integer.parseInt(arr[i]);
+                    }
+                    s.addAll(arr1);
                 break;
                 // case "intersection":
                 // s = new SortedSet();
