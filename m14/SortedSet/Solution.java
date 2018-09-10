@@ -16,7 +16,7 @@ class SortedSet extends Set {
 	/**
 	 * constructor.
 	 */
-	public SortedSet() {
+	 SortedSet() {
 		final int ten = 10;
 		sortedset = new int[ten];
 		size = 0;
