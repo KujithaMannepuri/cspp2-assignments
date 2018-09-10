@@ -72,8 +72,7 @@ class SortedSet extends Set {
 	 public int last() {
         if (size > 0) {
         	System.out.println(size + " Size ");
-        	System.out.println(sortedset[size]);
-            return sortedset[size];
+            return sortedset[size - 1];
         }
         System.out.println("Set Empty Exception");
         return -1;
