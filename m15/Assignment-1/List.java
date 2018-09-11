@@ -210,12 +210,12 @@ public class List {
      *
      * @return returns the index of the element.
      */
-    public int get(final int index) {
+    public int get(final int index) throws Exception{
         // Replace the code below to write the code for get
-        if (index < 0 || index >= size) {
-            return -1;
-        } else {
+        try {
             return list[index];
+        } catch(Exception e) {
+            throw new Exception("Index Out of Bounds Exception");
         }
     }
     /*
@@ -372,7 +372,7 @@ public class List {
             list1.add(this.get(i));
         }
         } catch(Exception e){
-            throw new Exception("Hi");
+            throw new Exception(e.getMessage());
         }
         return list1;
     }
@@ -464,10 +464,14 @@ public class List {
                     }
                 break;
                 case "get":
+                try {
                     if (tokens.length == 2) {
                         System.out.println(l.get(
                             Integer.parseInt(tokens[1])));
                     }
+                } catch(Exception e) {
+                    System.out.println(e.getMessage());
+                }
                 break;
                 case "contains":
                     if (tokens.length == 2) {
