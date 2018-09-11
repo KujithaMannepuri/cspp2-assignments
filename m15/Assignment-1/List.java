@@ -7,6 +7,11 @@ import java.util.Arrays;
  * Exception for signaling invalid position errors.
  */
 class InvalidPositionException extends Exception {
+    /**
+     * Constructs the object.
+     *
+     * @param      s     { parameter_description }
+     */
     InvalidPositionException(final String s) {
         super(s);
     }
@@ -17,7 +22,12 @@ class InvalidPositionException extends Exception {
  * Exception for signaling index out of bounds errors.
  */
 class IndexOutOfBoundsException extends Exception {
-    IndexOutOfBoundsException (final String s) {
+    /**
+     * Constructs the object.
+     *
+     * @param      s     { parameter_description }
+     */
+    IndexOutOfBoundsException(final String s) {
         super(s);
     }
 }
@@ -193,17 +203,25 @@ public class List {
             }
             size--;
         } else {
-                throw new InvalidPositionException("Invalid Position Exception");
+    throw new InvalidPositionException("Invalid Position Exception");
             }
         } catch (InvalidPositionException e) {
             System.out.println("Invalid Position Exception");
         }
     }
 
-    public int count(int item) {
+
+    /**
+     * count function.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int count(final int item) {
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if(list[i] == item) {
+            if (list[i] == item) {
                 count++;
             }
         }
@@ -362,18 +380,18 @@ public class List {
      * @return returns the sublist.
      */
     public List subList(final int start, final int end) {
-        try{
-            if (start < 0 || end < 0 || start > end || start > size || end > size || start == end) {
+        try {
+            if (start < 0 || end < 0 || start > end ||
+             start > size || end > size || start == end) {
             throw new IndexOutOfBoundsException("");
-            }
-            else {
+            } else {
                 List list1 = new List();
                 for (int i = start; i < end; i++) {
                     list1.add(this.get(i));
                     }
                 return list1;
         }
-    } catch(IndexOutOfBoundsException e) {
+    } catch (IndexOutOfBoundsException e) {
         System.out.println("Index Out of Bounds Exception");
     }
     return null;
