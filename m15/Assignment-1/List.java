@@ -178,9 +178,8 @@ public class List {
                 list[i] = list[i + 1];
             }
             size--;
-            throw new InvalidPositionException("Invalid Position Exception");
-                    // }
-        } catch (InvalidPositionException e) {
+            // }
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
