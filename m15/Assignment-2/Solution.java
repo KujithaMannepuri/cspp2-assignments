@@ -33,8 +33,9 @@ class SetEmptyException extends Exception {
  */
 class SortedSet extends Set {
     /**
-     * sort method.
-     * @param      array  The array
+     * { function_description }
+     *
+     * @param      arr   The arr
      */
     public void sort(final int[] arr) {
         int res;
@@ -94,13 +95,11 @@ class SortedSet extends Set {
     }
 
     /**
-     * { function_description }.
+     * { function_description }
      *
-     * @param      toElement  To element
+     * @param      toEle  To ele
      *
      * @return     { description_of_the_return_value }
-     *
-     * @throws     Exception  { exception_description }
      */
     public int[] headSet(final int toEle) {
         try {
