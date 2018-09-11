@@ -179,8 +179,10 @@ public class List {
             }
             size--;
         }
-            throw new InvalidPositionException("Invalid Position Exception");
-        } catch (Exception e) {
+            else {
+                throw new InvalidPositionException("Invalid Position Exception");
+            }
+        } catch (InvalidPositionException e) {
             System.out.println("Invalid Position Exception");
         }
     }
