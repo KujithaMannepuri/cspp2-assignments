@@ -381,8 +381,8 @@ public class List {
      */
     public List subList(final int start, final int end) {
         try {
-            if (start < 0 || end < 0 || start > end ||
-             start > size || end > size || start == end) {
+            if (start < 0 || end < 0 || start > end
+            || start > size || end > size || start == end) {
             throw new IndexOutOfBoundsException("");
             } else {
                 List list1 = new List();
