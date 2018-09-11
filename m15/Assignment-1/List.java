@@ -2,13 +2,22 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
 
+
+/**
+ * Exception for signaling invalid position errors.
+ */
 class InvalidPositionException extends Exception {
-    InvalidPositionException (String s) {
+    InvalidPositionException(final String s) {
         super(s);
     }
 }
+
+
+/**
+ * Exception for signaling index out of bounds errors.
+ */
 class IndexOutOfBoundsException extends Exception {
-    IndexOutOfBoundsException (String s) {
+    IndexOutOfBoundsException (final String s) {
         super(s);
     }
 }
@@ -177,14 +186,13 @@ public class List {
     public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
-        try{
+        try {
         if (index >= 0 && index < size) {
             for (int i = index; i < size; i++) {
                 list[i] = list[i + 1];
             }
             size--;
-        }
-            else {
+        } else {
                 throw new InvalidPositionException("Invalid Position Exception");
             }
         } catch (InvalidPositionException e) {
