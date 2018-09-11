@@ -178,10 +178,20 @@ public class List {
                 list[i] = list[i + 1];
             }
             size--;
+            throw new InvalidPositionException("Invalid Position Exception");
             // }
         } catch (Exception e) {
-            System.out.println("Invalid Position Exception");
+            System.out.println(e.getMessage());
         }
+    }
+    public int count(int item) {
+        int c = 0;
+        for (int i = 0; i < size; i++) {
+            if(list[i] == item) {
+                c++;
+            }
+        }
+        return c;
     }
 
     /*
