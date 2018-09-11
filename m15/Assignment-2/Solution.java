@@ -33,7 +33,7 @@ class SetEmptyException extends Exception {
  */
 class SortedSet extends Set {
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      arr   The arr
      */
@@ -95,7 +95,7 @@ class SortedSet extends Set {
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      toEle  To ele
      *
