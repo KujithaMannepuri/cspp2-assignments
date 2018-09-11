@@ -366,7 +366,7 @@ public class List {
                 return list1;
         }
     } catch(IndexOutOfBoundsException e) {
-        System.out.println("Index Out Of Bounds Exception");
+        System.out.println("Index Out of Bounds Exception");
     }
     return null;
 }
