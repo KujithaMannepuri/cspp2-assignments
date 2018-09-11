@@ -349,26 +349,26 @@ public class List {
      * @return returns the sublist.
      */
     public List subList(final int start, final int end) {
-        if (start < 0) {
+        if (start < 0 || end < 0 || start > end || start > size || end > size || start == end) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
-        if (end < 0) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        }
-        if (start > end) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        }
-        if (end > size()) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        }
-        if (start == end) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        }
+        // if (end < 0) {
+        //     System.out.println("Index Out of Bounds Exception");
+        //     return null;
+        // }
+        // if (start > end) {
+        //     System.out.println("Index Out of Bounds Exception");
+        //     return null;
+        // }
+        // if (end > size()) {
+        //     System.out.println("Index Out of Bounds Exception");
+        //     return null;
+        // }
+        // if (start == end) {
+        //     System.out.println("Index Out of Bounds Exception");
+        //     return null;
+        // }
         List list1 = new List();
         for (int i = start; i < end; i++) {
             list1.add(this.get(i));
