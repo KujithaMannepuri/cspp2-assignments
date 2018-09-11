@@ -174,7 +174,7 @@ public class List {
         // variable.
         try{
         //if (index >= 0 && index < size) {
-            for (int i = index; i < size - 1; i++) {
+            for (int i = index; i < size; i++) {
                 list[i] = list[i + 1];
             }
             size--;
