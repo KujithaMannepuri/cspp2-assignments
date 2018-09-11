@@ -188,13 +188,13 @@ public class List {
     }
 
     public int count(int item) {
-        int c = 0;
+        int count = 0;
         for (int i = 0; i < size; i++) {
             if(list[i] == item) {
-                c++;
+                count++;
             }
         }
-        return c;
+        return count;
     }
     /*
      * Get method has to return the items that is at the index position passed
@@ -518,6 +518,8 @@ public class List {
                 case "clear":
                     l.clear();
                 break;
+                case "count":
+                System.out.println(l.count(Integer.parseInt(tokens[1])));
                 default:
                 break;
             }
