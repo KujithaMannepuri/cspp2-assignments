@@ -345,7 +345,7 @@ public class List {
      *
      * @return returns the sublist.
      */
-    public List subList(final int start, final int end) {
+    public List subList(final int start, final int end) throws Exception {
         // if (start < 0) {
         //     System.out.println("Index Out of Bounds Exception");
         //     return null;
@@ -368,11 +368,11 @@ public class List {
         // }
         List list1 = new List();
         try {
-            for (int i = start; i < end; i++) {
-                list1.add(this.get(i));
-            }
-        } catch(Exception e) {
-            System.out.println("Index Out of Bounds Exception");
+        for (int i = start; i < end; i++) {
+            list1.add(this.get(i));
+        }
+        } catch(Exception e){
+            throw new Exception("Hi");
         }
         return list1;
     }
@@ -496,6 +496,7 @@ public class List {
                     }
                 break;
                 case "subList":
+                try {
                     if (tokens.length != 2) {
                         break;
                     }
@@ -505,6 +506,9 @@ public class List {
                     if (object != null) {
                         System.out.println(object);
                     }
+                } catch(Exception e) {
+                    System.out.println(e.getMessage());
+                }
                     break;
                 case "equals":
                     if (tokens.length == 2) {
