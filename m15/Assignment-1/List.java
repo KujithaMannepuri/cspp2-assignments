@@ -348,10 +348,11 @@ public class List {
      *
      * @return returns the sublist.
      */
-    public List subList(final int start, final int end) {
+    public List subList(final int start, final int end) throws Exception {
         if (start < 0 || end < 0 || start > end || start > size || end > size || start == end) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
+            // System.out.println("Index Out of Bounds Exception");
+            throw new Exception("Index Out of Bounds Exception");
+            // return null;
         }
         // if (end < 0) {
         //     System.out.println("Index Out of Bounds Exception");
@@ -498,11 +499,15 @@ public class List {
                     if (tokens.length != 2) {
                         break;
                     }
+                    try {
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(Integer.parseInt(arrstring3[0]),
                             Integer.parseInt(arrstring3[1]));
                     if (object != null) {
                         System.out.println(object);
+                    }
+                    }catch(Exception e) {
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case "equals":
