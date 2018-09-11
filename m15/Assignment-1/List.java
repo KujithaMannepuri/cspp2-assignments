@@ -7,6 +7,11 @@ class InvalidPositionException extends Exception {
         super(s);
     }
 }
+class IndexOutOfBoundsException extends Exception {
+    IndexOutOfBoundsException (String s) {
+        super(s);
+    }
+}
 /**
  * List class.
  */
@@ -348,44 +353,24 @@ public class List {
      *
      * @return returns the sublist.
      */
-    public List subList(final int start, final int end) throws Exception {
-        if (start < 0 || end < 0 || start > end || start > size || end > size || start == end) {
-            // System.out.println("Index Out of Bounds Exception");
-            throw new Exception("Index Out of Bounds Exception");
-            // return null;
+    public List subList(final int start, final int end) {
+        try{
+            if (start < 0 || end < 0 || start > end || start > size || end > size || start == end) {
+            throw new IndexOutOfBoundsException("");
+            }
+            else {
+                List list1 = new List();
+                for (int i = start; i < end; i++) {
+                    list1.add(this.get(i));
+                    }
+                return list1;
         }
-        // if (end < 0) {
-        //     System.out.println("Index Out of Bounds Exception");
-        //     return null;
-        // }
-        // if (start > end) {
-        //     System.out.println("Index Out of Bounds Exception");
-        //     return null;
-        // }
-        // if (end > size()) {
-        //     System.out.println("Index Out of Bounds Exception");
-        //     return null;
-        // }
-        // if (start == end) {
-        //     System.out.println("Index Out of Bounds Exception");
-        //     return null;
-        // }
-        List list1 = new List();
-        for (int i = start; i < end; i++) {
-            list1.add(this.get(i));
-        }
-        return list1;
+    } catch(IndexOutOfBoundsException e) {
+        System.out.println("IndexOutOfBoundsException");
     }
-        // List list2 = new List();
-        // if (size == end||start>end||start<0||end>size||end<0) {
-        //  System.out.println("Index Out of Bounds Exception");
-        //  return null;
-        // } else {
-        //  for (int i = start; i < end; i++) {
-        //      list2.add(list[i]);
-        //  }
-        //  return list2;
-        // }
+    return null;
+}
+
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
@@ -499,15 +484,11 @@ public class List {
                     if (tokens.length != 2) {
                         break;
                     }
-                    try {
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(Integer.parseInt(arrstring3[0]),
                             Integer.parseInt(arrstring3[1]));
                     if (object != null) {
                         System.out.println(object);
-                    }
-                    }catch(Exception e) {
-                        System.out.println(e.getMessage());
                     }
                     break;
                 case "equals":
