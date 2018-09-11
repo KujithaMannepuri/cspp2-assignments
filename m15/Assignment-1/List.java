@@ -2,6 +2,11 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
 
+class InvalidPositionException extends Exception {
+    InvalidPositionException (String s) {
+        super(s);
+    }
+}
 /**
  * List class.
  */
@@ -173,9 +178,10 @@ public class List {
                 list[i] = list[i + 1];
             }
             size--;
-        // }
-        } catch (Exception e) {
-            System.out.println("Invalid Position Exception");
+            throw new InvalidPositionException("Invalid Position Exception");
+                    // }
+        } catch (InvalidPositionException e) {
+            System.out.println(e.getMessage());
         }
     }
 
