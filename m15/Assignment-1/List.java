@@ -178,10 +178,9 @@ public class List {
                 list[i] = list[i + 1];
             }
             size--;
-            throw new InvalidPositionException("Invalid Position Exception");
             // }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Invalid Position Exception");
         }
     }
     public int count(int item) {
@@ -347,29 +346,33 @@ public class List {
      * @return returns the sublist.
      */
     public List subList(final int start, final int end) {
-        if (start < 0) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        }
-        if (end < 0) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        }
-        if (start > end) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        }
-        if (end > size()) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        }
-        if (start == end) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        }
+        // if (start < 0) {
+        //     System.out.println("Index Out of Bounds Exception");
+        //     return null;
+        // }
+        // if (end < 0) {
+        //     System.out.println("Index Out of Bounds Exception");
+        //     return null;
+        // }
+        // if (start > end) {
+        //     System.out.println("Index Out of Bounds Exception");
+        //     return null;
+        // }
+        // if (end > size()) {
+        //     System.out.println("Index Out of Bounds Exception");
+        //     return null;
+        // }
+        // if (start == end) {
+        //     System.out.println("Index Out of Bounds Exception");
+        //     return null;
+        // }
         List list1 = new List();
-        for (int i = start; i < end; i++) {
-            list1.add(this.get(i));
+        try {
+            for (int i = start; i < end; i++) {
+                list1.add(this.get(i));
+            }
+        } catch(Exception e) {
+            System.out.println("Index Out of Bounds Exception");
         }
         return list1;
     }
