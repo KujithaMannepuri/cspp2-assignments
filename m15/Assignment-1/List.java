@@ -173,11 +173,13 @@ public class List {
         // write the logic for remove here. Think about what to do to the size
         // variable.
         try{
-        //if (index >= 0 && index < size) {
+        if (index >= 0 && index < size) {
             for (int i = index; i < size; i++) {
                 list[i] = list[i + 1];
             }
             size--;
+        }
+            throw new InvalidPositionException("Invalid Position Exception");
         } catch (Exception e) {
             System.out.println("Invalid Position Exception");
         }
