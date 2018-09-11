@@ -172,17 +172,17 @@ public class List {
     public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
-        try {
-        // if (index >= 0 && index < size) {
-            for (int i = index; i < size; i++) {
+        try{
+        //if (index >= 0 && index < size) {
+            for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
             }
             size--;
-            // }
         } catch (Exception e) {
             System.out.println("Invalid Position Exception");
         }
     }
+
     public int count(int item) {
         int c = 0;
         for (int i = 0; i < size; i++) {
@@ -192,7 +192,6 @@ public class List {
         }
         return c;
     }
-
     /*
      * Get method has to return the items that is at the index position passed
      * as an argument to the method. If the item doesn't exist then return a -1
@@ -210,12 +209,12 @@ public class List {
      *
      * @return returns the index of the element.
      */
-    public int get(final int index) throws Exception{
+    public int get(final int index) {
         // Replace the code below to write the code for get
-        try {
+        if (index < 0 || index >= size) {
+            return -1;
+        } else {
             return list[index];
-        } catch(Exception e) {
-            throw new Exception("Index Out of Bounds Exception");
         }
     }
     /*
@@ -345,34 +344,30 @@ public class List {
      *
      * @return returns the sublist.
      */
-    public List subList(final int start, final int end) throws Exception {
-        // if (start < 0) {
-        //     System.out.println("Index Out of Bounds Exception");
-        //     return null;
-        // }
-        // if (end < 0) {
-        //     System.out.println("Index Out of Bounds Exception");
-        //     return null;
-        // }
-        // if (start > end) {
-        //     System.out.println("Index Out of Bounds Exception");
-        //     return null;
-        // }
-        // if (end > size()) {
-        //     System.out.println("Index Out of Bounds Exception");
-        //     return null;
-        // }
-        // if (start == end) {
-        //     System.out.println("Index Out of Bounds Exception");
-        //     return null;
-        // }
+    public List subList(final int start, final int end) {
+        if (start < 0) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if (end < 0) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if (start > end) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if (end > size()) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if (start == end) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
         List list1 = new List();
-        try {
         for (int i = start; i < end; i++) {
             list1.add(this.get(i));
-        }
-        } catch(Exception e){
-            throw new Exception(e.getMessage());
         }
         return list1;
     }
@@ -464,14 +459,10 @@ public class List {
                     }
                 break;
                 case "get":
-                try {
                     if (tokens.length == 2) {
                         System.out.println(l.get(
                             Integer.parseInt(tokens[1])));
                     }
-                } catch(Exception e) {
-                    System.out.println(e.getMessage());
-                }
                 break;
                 case "contains":
                     if (tokens.length == 2) {
@@ -500,7 +491,6 @@ public class List {
                     }
                 break;
                 case "subList":
-                try {
                     if (tokens.length != 2) {
                         break;
                     }
@@ -510,9 +500,6 @@ public class List {
                     if (object != null) {
                         System.out.println(object);
                     }
-                } catch(Exception e) {
-                    System.out.println(e.getMessage());
-                }
                     break;
                 case "equals":
                     if (tokens.length == 2) {
