@@ -73,7 +73,7 @@ class BookYourShow {
 					str += item.sNum[i] + ",";
 				}
 				str += item.sNum[item.sNum.length-1] + "]";
-				System.out.println("str");
+				System.out.println(str);
 			}
 		}
 	}
