@@ -154,7 +154,7 @@ class Item {
 		double total = getTotalAmount();
 		double newTotal = total - discount;
 		double tax = newTotal * 15/100;
-		System.out.println("totalAmount: " + getTotalAmount());
+		System.out.println("Total:" + getTotalAmount());
 		System.out.println("Disc%:"+discount);
 		System.out.println("Tax:"+ tax);
 		System.out.println("Payable amount: " + getPayableAmount());
@@ -185,10 +185,10 @@ class Solution {
 				shop.showCart();
 				break;
 				case "totalAmount":
-				System.out.println("totalAmount:" + shop.getTotalAmount());
+				System.out.println("totalAmount: " + shop.getTotalAmount());
 				break;
 				case "payableAmount":
-				System.out.println(shop.getPayableAmount());;
+				System.out.println("Payable amount: " + shop.getPayableAmount());
 				break;
 				case "remove":
 				String[] tokens2 = input[1].split(",");
