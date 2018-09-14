@@ -126,21 +126,45 @@ class Item {
 	public void applyCoupon(String coupon) {
 		// double discount = 0.0;
 
-		if (couponApplied) {
-			System.out.println("Invalid coupon");
-			return;
-		}
-		boolean valid = false;
-		if (k == 1){
-			for (String s : validCoupons) {
-				if (s.equals(coupon)) {
-					int num = Integer.parseInt(coupon.substring(3));
-					discount = getTotalAmount() * num/100;
-					valid = true;
-					k++;
-				}
-			}
-		}
+		double dis=0.0;
+	 	if(!couponApplied){
+	 		//System.out.println("Invalid coupon");
+	 		return;
+	 	}
+	 	boolean valid = false;
+	 	for(int i =0;i< validCoupons.length; i++){
+	 		//System.out.println("******"+coupon);
+	 		if(coupon.equals(validCoupons[i])){
+	 			int num = Integer.parseInt(coupon.substring(3));
+	 			dis = num;
+	 			validCoupons[i]=null;
+	 			couponApplied = false;
+	 			valid = true;
+	 		}
+	 	}
+	 	if(valid){
+	 	double total = getTotalAmount();
+	 	double dis1 = (total/100)*dis;
+	 	discount = dis1;
+	 	}
+	 else{
+	 	System.out.println("Invalid coupon");
+	 }
+		// if (couponApplied) {
+		// 	System.out.println("Invalid coupon");
+		// 	return;
+		// }
+		// boolean valid = false;
+		// if (k == 1){
+		// 	for (String s : validCoupons) {
+		// 		if (s.equals(coupon)) {
+		// 			int num = Integer.parseInt(coupon.substring(3));
+		// 			discount = getTotalAmount() * num/100;
+		// 			valid = true;
+		// 			k++;
+		// 		}
+		// 	}
+		// }
 		// if (!valid) {
 		// 	System.out.println("Invalid coupon");
 		// 	return;
