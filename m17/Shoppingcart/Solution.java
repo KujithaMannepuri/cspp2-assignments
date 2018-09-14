@@ -127,7 +127,7 @@ class Item {
 		// double discount = 0.0;
 
 		if (couponApplied) {
-			System.out.println("Invalid coupon");
+			// System.out.println("Invalid coupon");
 			return;
 		}
 		boolean valid = false;
@@ -137,6 +137,7 @@ class Item {
 					int num = Integer.parseInt(coupon.substring(3));
 					discount = getTotalAmount() * num/100;
 					valid = true;
+					couponApplied = true;
 					k++;
 				}
 			}
