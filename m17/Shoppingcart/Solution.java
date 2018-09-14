@@ -1,5 +1,4 @@
 import java.util.*;
-
 class Item {
 	String productName;
 	int quantity;
@@ -102,7 +101,6 @@ class Item {
 			total += cart[i].quantity * getPrice(cart[i]);
 		}
 		return total;
-
 	}
 	double getPrice(Item item) {
 		for (Item i : catalog) {
@@ -114,14 +112,11 @@ class Item {
 		}
 		return 0.0;
 	}
-
 	public double getPayableAmount() {
 		double total = getTotalAmount();
 		double newTotal = total - discount;
 		double tax = newTotal * 15/100;
 		return newTotal + tax;
-
-
 	}
 	public void applyCoupon(String coupon) {
 		// double discount = 0.0;
@@ -164,9 +159,7 @@ class Item {
 		System.out.println("Tax:"+ tax);
 		System.out.println("Payable amount: " + getPayableAmount());
 	}
-
 }
-
 class Solution {
 	public static void main(String[] args) {
 		ShoppingCart shop = new ShoppingCart();
@@ -206,8 +199,6 @@ class Solution {
 				shop.printInVoice();
 				break;
 			}
-			
 		}
-		
 	}
 }
