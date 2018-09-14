@@ -154,10 +154,10 @@ class Item {
 		double total = getTotalAmount();
 		double newTotal = total - discount;
 		double tax = newTotal * 15/100;
-		System.out.println("totalAmount:" + getTotalAmount());
+		System.out.println("totalAmount: " + getTotalAmount());
 		System.out.println("Disc%:"+discount);
 		System.out.println("Tax:"+ tax);
-		System.out.println("Payable amount:" + getPayableAmount());
+		System.out.println("Payable amount: " + getPayableAmount());
 	}
 
 }
