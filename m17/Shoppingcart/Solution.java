@@ -124,8 +124,10 @@ class Item {
 
 	}
 	public void applyCoupon(String coupon) {
-		if (couponApplied) {
-			System.out.println("Invalid coupon");
+		double discount = 0.0;
+
+		if (!couponApplied) {
+			//System.out.println("Invalid coupon");
 			return;
 		}
 		boolean valid = false;
