@@ -108,7 +108,6 @@ class Item {
 		}
 		return false;
 	}
-
 	/**
 	 * { function_description }
 	 *
@@ -129,7 +128,6 @@ class Item {
 		}
 		return false;
 	}
-
 	/**
 	 * Removes a from cartesian.
 	 *
@@ -142,7 +140,6 @@ class Item {
 			}	
 		}		
 	}
-
 	/**
 	 * Shows the cartesian.
 	 */
@@ -150,12 +147,11 @@ class Item {
 		for(Item i : cart) {
 			if (i != null) {
 				if (i.quantity != 0) {
-					System.out.println(i.productName+ " " + i.quantity);
+					System.out.println(i.productName + " " + i.quantity);
 				}
 			}
 		}
 	}
-
 	/**
 	 * Shows the catalog.
 	 */
@@ -166,7 +162,6 @@ class Item {
 		}
 		}
 	}
-
 	/**
 	 * Gets the total amount.
 	 *
@@ -179,7 +174,6 @@ class Item {
 		}
 		return total;
 	}
-
 	/**
 	 * Gets the price.
 	 *
@@ -197,7 +191,6 @@ class Item {
 		}
 		return 0.0;
 	}
-
 	/**
 	 * Gets the payable amount.
 	 *
@@ -206,7 +199,7 @@ class Item {
 	public double getPayableAmount() {
 		double total = getTotalAmount();
 		double newTotal = total - discount;
-		double tax = newTotal * 15/100;
+		double tax = newTotal * 15 / 100;
 		return newTotal + tax;
 	}
 
@@ -227,7 +220,7 @@ class Item {
 			for (String s : validCoupons) {
 				if (s.equals(coupon)) {
 					int num = Integer.parseInt(coupon.substring(3));
-					discount = getTotalAmount() * num/100;
+					discount = getTotalAmount() * num / 100;
 					valid = true;
 					couponApplied = true;
 					k++;
@@ -261,9 +254,9 @@ class Item {
 		final int f = 15;
 		double total = getTotalAmount();
 		double newTotal = total - discount;
-		double tax = newTotal * f/h;
+		double tax = newTotal * f / h;
 		System.out.println("Total:" + getTotalAmount());
-		System.out.println("Disc%:" +discount);
+		System.out.println("Disc%:" + discount);
 		System.out.println("Tax:" + tax);
 		System.out.println("Payable amount: " + getPayableAmount());
 	}
@@ -272,6 +265,11 @@ class Item {
  * Class for solution.
  */
 class Solution {
+	/**
+	 * function_description.
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(final String[] args) {
 		ShoppingCart shop = new ShoppingCart();
 		Scanner sc = new Scanner(System.in);
