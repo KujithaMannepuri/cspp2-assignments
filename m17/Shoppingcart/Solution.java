@@ -139,10 +139,10 @@ class Item {
 				valid = true;
 			}
 		}
-		if (!valid) {
-			System.out.println("Invalid coupon");
-			return;
-		}
+		// if (!valid) {
+		// 	System.out.println("Invalid coupon");
+		// 	return;
+		// }
 	}
 	void printInVoice() {
 		System.out.println("Name   quantity   Price");
