@@ -27,7 +27,7 @@ class Item {
 }
  class ShoppingCart {
 	int size1;
-	int size2;
+	int size2, k = 1;
 	Item[] catalog;
 	Item[] cart;
 	String[] validCoupons = {"IND10", "IND20", "IND30", "IND50"};
@@ -131,12 +131,14 @@ class Item {
 		// 	return;
 		// }
 		boolean valid = false;
-		for (String s : validCoupons) {
-			if (s.equals(coupon)) {
-				int num = Integer.parseInt(coupon.substring(3));
-				discount = getTotalAmount() * num/100;
-				couponApplied = true;
-				valid = true;
+		if (k == 1){
+			for (String s : validCoupons) {
+				if (s.equals(coupon)) {
+					int num = Integer.parseInt(coupon.substring(3));
+					discount = getTotalAmount() * num/100;
+					valid = true;
+					k++;
+				}
 			}
 		}
 		if (!valid) {
