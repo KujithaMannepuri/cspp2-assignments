@@ -126,10 +126,10 @@ class Item {
 	public void applyCoupon(String coupon) {
 		// double discount = 0.0;
 
-		// if (couponApplied) {
-		// 	System.out.println("Invalid coupon");
-		// 	return;
-		// }
+		if (couponApplied) {
+			System.out.println("Invalid coupon");
+			return;
+		}
 		boolean valid = false;
 		if (k == 1){
 			for (String s : validCoupons) {
@@ -141,10 +141,10 @@ class Item {
 				}
 			}
 		}
-		if (!valid) {
-			System.out.println("Invalid coupon");
-			return;
-		}
+		// if (!valid) {
+		// 	System.out.println("Invalid coupon");
+		// 	return;
+		// }
 	}
 	void printInVoice() {
 		System.out.println("Name   quantity   Price");
