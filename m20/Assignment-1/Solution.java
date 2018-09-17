@@ -287,6 +287,7 @@ public final class Solution {
         	quiz.addQuestion(qObj);
 
         }
+        System.out.println(q + "are added to the quiz");
     }
     /**
      * Starts a quiz.
