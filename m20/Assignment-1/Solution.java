@@ -293,7 +293,7 @@ public final class Solution {
         		for(int i = 0; i < q; i++) {
         		String[] quesParams =  scan.nextLine().split(":");
         		String choices[] = quesParams[1].split(",");
-        		if (quesParams.length != 5 && quesParams[0].length() > 1) {
+        		if (quesParams.length != 5 || quesParams[0].length() == 0) {
         			throw new Exception("Error! Malformed question");
         		} else if (choices.length < 2) {
         			throw new Exception(quesParams[0] + " does not have enough answer choices");
