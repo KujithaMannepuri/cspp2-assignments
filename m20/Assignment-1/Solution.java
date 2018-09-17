@@ -302,7 +302,7 @@ public final class Solution {
         		} else if (!(Integer.parseInt(quesParams[3]) > 0)) {
         			throw new Exception ("Invalid max marks for " + quesParams[0]);
         		} else if (!(Integer.parseInt(quesParams[4]) < 0)) {
-        			throw new Exception ("Invalid max marks for " + quesParams[0]);
+        			throw new Exception ("Invalid Penalty for " + quesParams[0]);
         		} else {
         			Question qObj = new Question(quesParams[0],choices,Integer.parseInt(quesParams[2]),Integer.parseInt(quesParams[3]),Integer.parseInt(quesParams[4]));
         			quiz.addQuestion(qObj);
