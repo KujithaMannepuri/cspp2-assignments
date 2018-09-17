@@ -299,7 +299,7 @@ public final class Solution {
         				" does not have enough answer choices");
         		} else if (Integer.parseInt(quesParams[2]) > choices.length) {
         			throw new Exception
-        			("Error! Correct answer choice number isout of range for "
+        			("Error! Correct answer choice number is out of range for "
         				+ quesParams[0]);
         		} else if (!(Integer.parseInt(quesParams[3]) > 0)) {
         			throw new Exception ("Invalid max marks for " + quesParams[0]);
