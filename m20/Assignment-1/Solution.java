@@ -301,7 +301,7 @@ public final class Solution {
         			throw new Exception("Error! Correct answer choice number is out of range for " + quesParams[0]);
         		} else if (!(Integer.parseInt(quesParams[3]) > 0)) {
         			throw new Exception ("Invalid max marks for " + quesParams[0]);
-        		} else if (!(Integer.parseInt(quesParams[4]) < 0)) {
+        		} else if (!(Integer.parseInt(quesParams[4]) <= 0)) {
         			throw new Exception ("Invalid penalty for " + quesParams[0]);
         		} else {
         			Question qObj = new Question(quesParams[0],choices,Integer.parseInt(quesParams[2]),Integer.parseInt(quesParams[3]),Integer.parseInt(quesParams[4]));
