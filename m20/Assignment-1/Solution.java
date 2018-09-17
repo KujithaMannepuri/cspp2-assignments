@@ -196,13 +196,13 @@ class Quiz {
         		count++;
         	}
         	else {
-        		System.out.println(" Wrong Answer! - Penalty: " + questions[i].getPenalty());
+System.out.println(" Wrong Answer! - Penalty: " + questions[i].getPenalty());
         		score = score + questions[i].getPenalty();
         		count++;
         	}
         }
     }
-        if(count>0) {
+        if (count > 0) {
         	return "Total Score: " + score;
         } else {
         return s;
@@ -246,8 +246,7 @@ public final class Solution {
                 System.out.println("|----------------|");
                 try {
                 	loadQuestions(s, q, Integer.parseInt(tokens[1]));
-                 }
-                catch (Exception e) {
+                 } catch (Exception e) {
                 	System.out.println(e.getMessage());
                 }
                 break;
@@ -274,7 +273,7 @@ public final class Solution {
      * @param      scan       The scan
      * @param      quiz       The quiz
      * @param      q          The question count
-     *
+     * @param     Exception   Exception
      */
     public static void loadQuestions(final Scanner scan,
         final Quiz quiz, final int q) throws Exception {
@@ -290,17 +289,17 @@ public final class Solution {
         final int two = 2;
         final int three = 3;
         final int four = 4;
-        if(q == 0) {
-        	throw new Exception("Quiz does not have questions");	
+        if (q == 0) {
+        	throw new Exception("Quiz does not have questions");
         	} else {
-        		for(int i = 0; i < q; i++) {
+        		for (int i = 0; i < q; i++) {
         		String[] quesParams =  scan.nextLine().split(":");
-        		String choices[] = quesParams[1].split(",");
-        		if (quesParams.length != five || quesParams[0].length() == 0) {
-        			throw new Exception("Error! Malformed question");
+        		String[] choices = quesParams[1].split(",");
+    if (quesParams.length != five || quesParams[0].length() == 0) {
+        throw new Exception("Error! Malformed question");
         		} else if (choices.length < two) {
-        			throw new Exception(quesParams[0] +
-        				" does not have enough answer choices");
+        			throw new Exception(quesParams[0]
+        				+" does not have enough answer choices");
         		} else if (
         	Integer.parseInt(quesParams[two]) > choices.length) {
         			throw new Exception(
@@ -309,9 +308,9 @@ public final class Solution {
         		} else if (!(Integer.parseInt(quesParams[three]) > 0)) {
         	throw new Exception("Invalid max marks for " + quesParams[0]);
         		} else if (!(Integer.parseInt(quesParams[four]) <= 0)) {
-        			throw new Exception("Invalid penalty for " + quesParams[0]);
+        	throw new Exception("Invalid penalty for " + quesParams[0]);
         		} else {
-        			Question qObj = new Question(quesParams[0], choices,
+        	Question qObj = new Question(quesParams[0], choices,
         				Integer.parseInt(quesParams[two]),
         				Integer.parseInt(quesParams[three]),
         				Integer.parseInt(quesParams[four]));
