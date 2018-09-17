@@ -301,17 +301,19 @@ public final class Solution {
         		} else if (choices.length < two) {
         			throw new Exception(quesParams[0] +
         				" does not have enough answer choices");
-        		} else if (Integer.parseInt(quesParams[two]) > choices.length) {
-        			throw new Exception
-        			("Error! Correct answer choice number is out of range for "
+        		} else if (
+        	Integer.parseInt(quesParams[two]) > choices.length) {
+        			throw new Exception(
+        	"Error! Correct answer choice number is out of range for "
         				+ quesParams[0]);
         		} else if (!(Integer.parseInt(quesParams[three]) > 0)) {
-        			throw new Exception ("Invalid max marks for " + quesParams[0]);
+        	throw new Exception("Invalid max marks for " + quesParams[0]);
         		} else if (!(Integer.parseInt(quesParams[four]) <= 0)) {
-        			throw new Exception ("Invalid penalty for " + quesParams[0]);
+        			throw new Exception("Invalid penalty for " + quesParams[0]);
         		} else {
         			Question qObj = new Question(quesParams[0], choices,
-        				Integer.parseInt(quesParams[two]), Integer.parseInt(quesParams[three]),
+        				Integer.parseInt(quesParams[two]),
+        				Integer.parseInt(quesParams[three]),
         				Integer.parseInt(quesParams[four]));
         			quiz.addQuestion(qObj);
         		}
