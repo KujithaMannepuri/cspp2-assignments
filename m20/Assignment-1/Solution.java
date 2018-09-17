@@ -286,29 +286,33 @@ public final class Solution {
         // 	String[] token = lines.split(":");
         // 	String[] choice1 = token[1].split(",");
         // }
+        final int five = 5;
+        final int two = 2;
+        final int three = 3;
+        final int four = 4;
         if(q == 0) {
-        	throw new Exception("Quiz does not have questions");		
+        	throw new Exception("Quiz does not have questions");	
         	} else {
         		for(int i = 0; i < q; i++) {
         		String[] quesParams =  scan.nextLine().split(":");
         		String choices[] = quesParams[1].split(",");
-        		if (quesParams.length != 5 || quesParams[0].length() == 0) {
+        		if (quesParams.length != five || quesParams[0].length() == 0) {
         			throw new Exception("Error! Malformed question");
-        		} else if (choices.length < 2) {
+        		} else if (choices.length < two) {
         			throw new Exception(quesParams[0] +
         				" does not have enough answer choices");
-        		} else if (Integer.parseInt(quesParams[2]) > choices.length) {
+        		} else if (Integer.parseInt(quesParams[two]) > choices.length) {
         			throw new Exception
         			("Error! Correct answer choice number is out of range for "
         				+ quesParams[0]);
-        		} else if (!(Integer.parseInt(quesParams[3]) > 0)) {
+        		} else if (!(Integer.parseInt(quesParams[three]) > 0)) {
         			throw new Exception ("Invalid max marks for " + quesParams[0]);
-        		} else if (!(Integer.parseInt(quesParams[4]) <= 0)) {
+        		} else if (!(Integer.parseInt(quesParams[four]) <= 0)) {
         			throw new Exception ("Invalid penalty for " + quesParams[0]);
         		} else {
         			Question qObj = new Question(quesParams[0], choices,
-        				Integer.parseInt(quesParams[2]), Integer.parseInt(quesParams[3]),
-        				Integer.parseInt(quesParams[4]));
+        				Integer.parseInt(quesParams[two]), Integer.parseInt(quesParams[three]),
+        				Integer.parseInt(quesParams[four]));
         			quiz.addQuestion(qObj);
         		}
         	}
@@ -327,13 +331,13 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
-        if(quiz.getSize() > 0) {
+        if (quiz.getSize() > 0) {
         	for (int i = 0; i < q; i++) {
         	String rspnse = scan.nextLine();
         	quiz.getQuestion(i).setResponse(rspnse);
         	Question qu = quiz.getQuestion(i);
-        	System.out.println(qu.getQuestionText() +
-        		"(" + qu.getMaxMarks() + ")");
+        	System.out.println(qu.getQuestionText()
+        		+ "(" + qu.getMaxMarks() + ")");
         	System.out.println(qu.toString());
         	System.out.println("");
         }
