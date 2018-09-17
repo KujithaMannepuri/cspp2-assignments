@@ -273,7 +273,7 @@ public final class Solution {
      * @param      scan       The scan
      * @param      quiz       The quiz
      * @param      q          The question count
-     * @param     Exception   Exception
+     * @throws     throws     The Exception
      */
     public static void loadQuestions(final Scanner scan,
         final Quiz quiz, final int q) throws Exception {
@@ -299,7 +299,7 @@ public final class Solution {
         throw new Exception("Error! Malformed question");
         		} else if (choices.length < two) {
         			throw new Exception(quesParams[0]
-        				+" does not have enough answer choices");
+        	+ " does not have enough answer choices");
         		} else if (
         	Integer.parseInt(quesParams[two]) > choices.length) {
         			throw new Exception(
