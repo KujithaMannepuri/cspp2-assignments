@@ -303,6 +303,10 @@ public final class Solution {
         for (int i = 0; i < q; i++) {
         	String rspnse = scan.nextLine();
         	quiz.getQuestion(i).setResponse(rspnse);
+        	Question qu = quiz.getQuestion(i);
+        	System.out.println(qu.getQuestionText()+"("+qu.getMaxMarks() + ")");
+        	System.out.println(qu.toString());
+        	System.out.println("");
         }
     }
     /**
