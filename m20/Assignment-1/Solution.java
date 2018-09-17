@@ -295,16 +295,16 @@ public final class Solution {
         		} else if (Integer.parseInt(quesParams[2]) > choices.length) {
         			throw new Exception("Error! Correct answer choice number is out of range for " + quesParams[0]);
         		} else if (!(Integer.parseInt(quesParams[3]) > 0)) {
-        			throw new Exception ("Invalis max marks for " + quesParams[0]);
+        			throw new Exception ("Invalid max marks for " + quesParams[0]);
         		} else if (!(Integer.parseInt(quesParams[4]) > 0)) {
-        			throw new Exception ("Invalis max marks for " + quesParams[0]);
+        			throw new Exception ("Invalid max marks for " + quesParams[0]);
         		} else {
         			Question qObj = new Question(quesParams[0],choices,Integer.parseInt(quesParams[2]),Integer.parseInt(quesParams[3]),Integer.parseInt(quesParams[4]));
         			quiz.addQuestion(qObj);
         		}
         	}
-        }
         	System.out.println(q + " are added to the quiz");
+        }
     }
     /**
      * Starts a quiz.
@@ -318,6 +318,7 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
+        try {
         for (int i = 0; i < q; i++) {
         	String rspnse = scan.nextLine();
         	quiz.getQuestion(i).setResponse(rspnse);
@@ -326,6 +327,9 @@ public final class Solution {
         	System.out.println(qu.toString());
         	System.out.println("");
         }
+    } catch (Exception e) {
+    	return;
+    }
     }
     /**
      * Displays the score report.
