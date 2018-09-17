@@ -183,20 +183,25 @@ class Quiz {
     public String showReport() {
         String s = "";
         int score = 0;
+        int count =0;
         if (size != 0) {
         for (int i = 0; i < size; i++) {
         	System.out.println(questions[i].getQuestionText());
         	if (questions[i].evaluateResponse(questions[i].getResponse())) {
         		System.out.println(" Correct Answer! - Marks Awarded: " + questions[i].getMaxMarks());
         		score = score + questions[i].getMaxMarks();
+        		count++;
         	}
         	else {
         		System.out.println(" Wrong Answer! - Penalty: " + questions[i].getPenalty());
         		score = score + questions[i].getPenalty();
+        		count++;
         	}
         }
-        return "Total Score: " + score;
-    } else {
+    }
+        if(count>0) {
+        	return "Total Score: " + score;
+        } else {
         return s;
     }
     }
@@ -283,7 +288,7 @@ public final class Solution {
         		for(int i = 0; i < q; i++) {
         		String[] quesParams =  scan.nextLine().split(":");
         		String choices[] = quesParams[1].split(",");
-        		if (quesParams.length != 5 || quesParams[0].length() == 0) {
+        		if (quesParams.length != 5 && quesParams[1].length() > 1) {
         			throw new Exception("Error! Malformed question");
         		} else if (choices.length < 2) {
         			throw new Exception(quesParams[0] + " does not have enough answer choices");
@@ -298,8 +303,8 @@ public final class Solution {
         			quiz.addQuestion(qObj);
         		}
         	}
-        	System.out.println(q + " are added to the quiz");
         }
+        	System.out.println(q + " are added to the quiz");
     }
     /**
      * Starts a quiz.
