@@ -195,7 +195,7 @@ class Quiz {
         		score = score + questions[i].getPenalty();
         	}
         }
-        return "Total score: " + score;
+        return "Total Score: " + score;
     } else {
         return s;
     }
