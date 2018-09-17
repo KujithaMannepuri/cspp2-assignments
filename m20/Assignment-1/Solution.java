@@ -156,6 +156,9 @@ class Quiz {
     	questions = new Question[onehundred];
     	size = 0;
     }
+    public int getSize() {
+		return this.size;
+	}
     /**
      * Adds a question.
      *
@@ -207,9 +210,7 @@ class Quiz {
     }
 
 
-public int getSize() {
-	return this.size;
-}
+
 }
 /**
  * Solution class for code-eval.
@@ -322,7 +323,7 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
-        if(quiz.getSize()>=q) {
+        if(quiz.getSize()>0) {
         	for (int i = 0; i < q; i++) {
         	String rspnse = scan.nextLine();
         	quiz.getQuestion(i).setResponse(rspnse);
