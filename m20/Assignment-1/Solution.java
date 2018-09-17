@@ -109,7 +109,7 @@ class Question {
      * @param      answer  The answer
      */
     public void setResponse(final String answer) {
-    	this.response = answer;
+    	response = answer;
     }
     /**
      * Gets the response.
@@ -234,7 +234,12 @@ public final class Solution {
                 System.out.println("|----------------|");
                 System.out.println("| Load Questions |");
                 System.out.println("|----------------|");
-                loadQuestions(s, q, Integer.parseInt(tokens[1]));
+                try {
+                	loadQuestions(s, q, Integer.parseInt(tokens[1]));
+                 }
+                catch(Exception e) {
+                	System.out.println(e.getMessage());
+                }
                 break;
                 case "START_QUIZ":
                 System.out.println("|------------|");
@@ -262,7 +267,7 @@ public final class Solution {
      *
      */
     public static void loadQuestions(final Scanner scan,
-        final Quiz quiz, final int q) {
+        final Quiz quiz, final int q) throws Exception {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
@@ -271,23 +276,30 @@ public final class Solution {
         // 	String[] token = lines.split(":");
         // 	String[] choice1 = token[1].split(",");
         // }
-        for(int i = 0; i < q; i++) {
-        	String[] quesParams =  scan.nextLine().split(":");
-        	try{
-        		if(q == 0) {
-        			throw new Exception();
-        		}		
-        	}catch (Exception e){
-        		System.out.println("Quiz does not have questions");
-        		return;
+        
+        if(q == 0) {
+        	throw new Exception("Quiz does not have questions");		
+        	} else {
+        		for(int i = 0; i < q; i++) {
+        		String[] quesParams =  scan.nextLine().split(":");
+        		String choices[] = quesParams[1].split(",");
+        		if (quesParams.length != 5 || quesParams[0].length() == 0) {
+        			throw new Exception("Error! Malformed question");
+        		} else if (choices.length < 2) {
+        			throw new Exception(quesParams[0] + " does not have enough answer choices");
+        		} else if (Integer.parseInt(quesParams[2]) > choices.length) {
+        			throw new Exception("Error! Correct answer choice number is out of range for " + quesParams[0]);
+        		} else if (!(Integer.parseInt(quesParams[3]) > 0)) {
+        			throw new Exception ("Invalis max marks for " + quesParams[0]);
+        		} else if (!(Integer.parseInt(quesParams[4]) > 0)) {
+        			throw new Exception ("Invalis max marks for " + quesParams[0]);
+        		} else {
+        			Question qObj = new Question(quesParams[0],choices,Integer.parseInt(quesParams[2]),Integer.parseInt(quesParams[3]),Integer.parseInt(quesParams[4]));
+        			quiz.addQuestion(qObj);
+        		}
         	}
-        	String choices[] = quesParams[1].split(",");
-
-        	Question qObj = new Question(quesParams[0],choices,Integer.parseInt(quesParams[2]),Integer.parseInt(quesParams[3]),Integer.parseInt(quesParams[4]));
-        	quiz.addQuestion(qObj);
-
+        	System.out.println(q + " are added to the quiz");
         }
-        System.out.println(q + " are added to the quiz");
     }
     /**
      * Starts a quiz.
