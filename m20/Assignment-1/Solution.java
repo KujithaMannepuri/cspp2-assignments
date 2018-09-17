@@ -195,7 +195,8 @@ class Quiz {
         for (int i = 0; i < size; i++) {
             System.out.println(questions[i].getQuestionText());
             if (questions[i].evaluateResponse(questions[i].getResponse())) {
-System.out.println(" Correct Answer! - Marks Awarded: " + questions[i].getMaxMarks());
+System.out.println(" Correct Answer! - Marks Awarded: " +
+    questions[i].getMaxMarks());
                 score = score + questions[i].getMaxMarks();
                 count++;
             } else {
@@ -270,13 +271,15 @@ public final class Solution {
             }
         }
     }
+   
     /**
      * Loads questions.
      *
      * @param      scan       The scan
      * @param      quiz       The quiz
-     * @param      q          The question count
-     * @throws     throws     The Exception
+     * @param      q          The quarter
+     *
+     * @throws     Exception  { exception_description }
      */
     public static void loadQuestions(final Scanner scan,
         final Quiz quiz, final int q) throws Exception {
