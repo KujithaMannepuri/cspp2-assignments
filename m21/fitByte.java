@@ -9,20 +9,16 @@ class FoodLog {
 		this.quantity = quantity1;
 		this.date = date1;
 	}
-
 	public String getFood() {
 		return foodItem;
 	}
-
 	public Double getQuantity() {
 		return quantity;
 	}
-
 	public String getDate() {
 		return date;
 	}
 }
-
 class WaterLog {
 	private Double wquantity;
 
