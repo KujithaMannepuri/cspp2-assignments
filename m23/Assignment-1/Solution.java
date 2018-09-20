@@ -78,11 +78,7 @@ class Solution {
 				result[i][j] = Math.round(obj.plagiarism(hmapArr[i],hmapArr[j])*100);
 			}
 		}
-		// for(int i = 0; i< fileList.length;i++) {
-		// 	String[] loc = fileList[i].split();
-		// 	System.out.print(loc[loc.length-1]+"\t");
-		// }
-		System.out.println();
+		
 		for(int i = 0; i < fileList.length;i++) {
 			for(int j = 0; j < fileList.length; j++) {
 				System.out.print(result[i][j]+"\t");
