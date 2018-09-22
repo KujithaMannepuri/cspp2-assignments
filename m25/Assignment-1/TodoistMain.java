@@ -29,10 +29,12 @@ class Task {
         public int getTime() {
             int t;
                 if (this.timeToComplete < 0) {
-                    System.out.println("Invalid timeToComplete" + this.timeToComplete);
-                }
+                    System.out.println("Invalid timeToComplete " + this.timeToComplete);
+                    return 0;
+                } else {
                     t = this.timeToComplete;
                      return t;
+                }
                 }
             //  catch (Exception e) {
                     
