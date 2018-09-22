@@ -28,13 +28,15 @@ class Task {
         }
         public int getTime() {
             int t = 0;
-            try{
-                if (this.timeToComplete > 0) {
+                if (this.timeToComplete < 0) {
+                    System.out.println("Invalid timeToComplete" + this.timeToComplete);
+                }
+                else {
                     t = this.timeToComplete;
                 }
-            } catch (Exception e) {
-                 System.out.println("Invalid timeToComplete" + this.timeToComplete);   
-            }
+            //  catch (Exception e) {
+                    
+            // }
             // return this.timeToComplete;
            return t;
         }
