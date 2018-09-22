@@ -77,6 +77,11 @@ class Task {
         }
 
         public String toString () {
+            if (getTitle() != "") {
+                return getTitle();
+            } else {
+                System.out.println("Title not provided ");
+            }
             String s = "";
             s = getTitle() + ", " +  getAssignedTo() + ", " + getTime() + ", " + getImporatnat() + ", " + getUrgent() + ", " + getStatus();
             return s;
