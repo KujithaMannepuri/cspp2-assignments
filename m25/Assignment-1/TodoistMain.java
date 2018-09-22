@@ -81,7 +81,6 @@ class Task {
             s = getTitle() + ", " +  getAssignedTo() + ", " + getTime() + ", " + getImporatnat() + ", " + getUrgent() + ", " + getStatus();
             return s;
         }
-
 }
 
 class Todoist {
