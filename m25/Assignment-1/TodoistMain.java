@@ -27,7 +27,16 @@ class Task {
             return this.assignedTo;
         }
         public int getTime() {
-            return this.timeToComplete;
+            int t = 0;
+            try{
+                if (this.timeToComplete > 0) {
+                    t = this.timeToComplete;
+                }
+            } catch (Exception e) {
+                 System.out.println("Invalid timeToComplete" + this.timeToComplete);   
+            }
+            // return this.timeToComplete;
+           return t;
         }
         public String getImporatnat() {
             String s = "";
