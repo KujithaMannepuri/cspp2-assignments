@@ -77,11 +77,6 @@ class Task {
         }
 
         public String toString () {
-            if (getTitle() != "") {
-                return getTitle();
-            } else {
-                System.out.println("Title not provided ");
-            }
             String s = "";
             s = getTitle() + ", " +  getAssignedTo() + ", " + getTime() + ", " + getImporatnat() + ", " + getUrgent() + ", " + getStatus();
             return s;
@@ -100,13 +95,18 @@ class Todoist {
     public int getSize() {
         return size;
     }
-    public void resize(Task item) {
-        arr = Arrays.copyOf(arr, arr.length * 2);
-        arr[size++] = item;
+    public void resize() {
+        arr = Arrays.copyOf(arr, size * 2);
+        // arr[size++] = item;
     }
 
     public void addTask(Task items) {
+        if (size == arr.length) {
+            resize();
+        }
+        else {
         arr[size++] = items;
+    }
     }
     public Task getNextTask(String item) {
         return null;
@@ -118,6 +118,13 @@ class Todoist {
     public int totalTime4Completion() {
         return 0;
     }
+     public String toString() {
+        String p = "";
+        for (int i = 0; i < size; i++) {
+            p = arr[i] + "\n";
+        }
+        return p;
+     }
 }
 /**
  * Class for todoist main.
