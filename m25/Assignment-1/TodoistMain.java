@@ -59,7 +59,7 @@ class Task {
 
         public String toString () {
             String s = "";
-            s = getTitle() + "," +  getAssignedTo() + "," + getTime() + "," + getImporatnat() + "," + getUrgent() + "," + getStatus();
+            s = getTitle() + ", " +  getAssignedTo() + ", " + getTime() + ", " + getImporatnat() + ", " + getUrgent() + ", " + getStatus();
             return s;
         }
 
