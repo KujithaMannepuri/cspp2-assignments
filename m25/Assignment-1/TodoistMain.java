@@ -116,7 +116,13 @@ class Todoist {
     }
 
     public int totalTime4Completion() {
-        return 0;
+        int totalTime = 0;
+        for (int i = 0; i < size; i++) {
+            if (arr[i].getStatus().equals("todo")) {
+                totalTime += arr[i].getTime();
+            }
+        }
+        return totalTime;
     }
      public String toString() {
         String p = "";
