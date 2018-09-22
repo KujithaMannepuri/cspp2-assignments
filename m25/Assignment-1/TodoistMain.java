@@ -27,19 +27,18 @@ class Task {
             return this.assignedTo;
         }
         public int getTime() {
-            int t = 0;
+            int t;
                 if (this.timeToComplete < 0) {
                     System.out.println("Invalid timeToComplete" + this.timeToComplete);
                 }
-                else {
                     t = this.timeToComplete;
+                     return t;
                 }
             //  catch (Exception e) {
                     
             // }
             // return this.timeToComplete;
-           return t;
-        }
+          
         public String getImporatnat() {
             String s = "";
             if(this.important == true) {
