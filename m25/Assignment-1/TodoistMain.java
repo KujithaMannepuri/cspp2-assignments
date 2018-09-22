@@ -27,19 +27,19 @@ class Task {
             return this.assignedTo;
         }
         public int getTime() {
-            int t;
-                if (this.timeToComplete < 0) {
-                    System.out.println("Invalid timeToComplete " + this.timeToComplete);
-                    return 0;
-                } else {
-                    t = this.timeToComplete;
-                     return t;
-                }
-                }
+            // int t;
+            //     if (this.timeToComplete < 0) {
+            //         System.out.println("Invalid timeToComplete " + this.timeToComplete);
+            //     } else {
+            //         t = this.timeToComplete;
+            //          return t;
+            //     }
+            //     }
             //  catch (Exception e) {
                     
             // }
-            // return this.timeToComplete;
+            return this.timeToComplete;
+        }
           
         public String getImporatnat() {
             String s = "";
