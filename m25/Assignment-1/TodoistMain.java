@@ -51,8 +51,10 @@ class Task {
             String stat = "";
             if (this.status.equals("todo")) {
                 stat = "todo";
-            } else {
+            } else if (this.status.equals("done")){
                 stat = "done";
+            } else {
+                stat = "Invalid Status" + this.status;
             }
             return stat;
         }
