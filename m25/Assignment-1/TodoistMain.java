@@ -49,13 +49,18 @@ class Task {
         }
         public String getStatus() {
             String stat = "";
+            // if (this.status(!(.equals("todo"))) || this.status(!(.equals("done")))) {
+            //     throw new Exception(e);
+            // }
             if (this.status.equals("todo")) {
                 stat = "todo";
-            } else if (this.status.equals("done")){
+            } 
+            // else (this.status.equals("done")){
+            //     stat = "done";
+            // }
+             else {
                 stat = "done";
-            } else {
-                stat = "Invalid Status" + this.status;
-            }
+             }
             return stat;
         }
 
@@ -91,11 +96,11 @@ class Todoist {
         return null;
     }
     public Task[] getNextTask(String text, int i) {
-        return null;
+        return arr;
     }
 
     public int totalTime4Completion() {
-        return 1;
+        return 0;
     }
 }
 /**
