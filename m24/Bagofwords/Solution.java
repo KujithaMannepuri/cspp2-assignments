@@ -37,7 +37,7 @@ class bagOfWords {
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
-	public static int similarity(String file1, String file2) {
+	public static int similarity(final String file1, final String file2) {
 		double nmrtr = 0;
 		double sum1 = 0;
 		double sum2 = 0;
@@ -45,7 +45,7 @@ class bagOfWords {
 		Map<String, Integer> hmap2 = removeAll(file2);
 		for (String ind1:hmap1.keySet()) {
 			for (String ind2:hmap2.keySet()) {
-				if (ind1.equals(ind2)){
+				if (ind1.equals(ind2)) {
 					nmrtr += hmap1.get(ind1)*hmap2.get(ind2);
 				}
 			}
@@ -66,12 +66,12 @@ class bagOfWords {
 	 *
 	 * @return     String representation of the object.
 	 */
-	public static String toString(File filename) {
+	public static String toString(final File filename) {
 		String str = "";
 		try {
 			Scanner sc = new Scanner(new FileReader(filename));
 			StringBuilder s = new StringBuilder();
-			while(sc.hasNext()) {
+			while (sc.hasNext()) {
 				s.append(sc.next());
 				s.append(" ");
 			}
@@ -87,7 +87,18 @@ class bagOfWords {
  * Class for solution.
  */
 class Solution {
-	public static void main(String[] args) {
+	/**
+	 * constructor.
+	 */
+	private Solution() {
+
+	}
+	/**
+	 * main function.
+	 *
+	 * @param  args  The arguments
+	 */
+	public static void main(final String[] args) {
 		try {
 		bagOfWords f = new bagOfWords();
 		Scanner sc = new Scanner(System.in);
@@ -102,10 +113,12 @@ class Solution {
 				if (i == j) {
 					res[i][j] = 100;
 				} else {
-				res[i][j] = bagOfWords.similarity(bagOfWords.toString(listOfFiles[i]),bagOfWords.toString(listOfFiles[j]));
+				res[i][j] = bagOfWords.similarity(bagOfWords.toString(listOfFiles[i]),
+					bagOfWords.toString(listOfFiles[j]));
 				if (max < res[i][j]) {
 					max = res[i][j];
-					res1 = "Maximum similarity is in between " + listOfFiles[i].getName() + " and " + listOfFiles[j].getName();
+					res1 = "Maximum similarity is in between "
+		+ listOfFiles[i].getName() + " and " + listOfFiles[j].getName();
 				}
 			}
 			}
@@ -123,8 +136,7 @@ class Solution {
 			System.out.println();
 		}
 		System.out.println(res1);
-
-	}catch(NoSuchElementException e) {
+	} catch (NoSuchElementException e) {
 		System.out.println("empty directory");
 	}
 	}
