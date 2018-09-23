@@ -3,11 +3,11 @@ import java.io.*;
 /**
  * Class for bag of words.
  */
-class bagOfWords {
+class BagOfWords {
 	/**
 	 * constructor.
 	 */
-	protected bagOfWords() {
+	protected BagOfWords() {
 	}
 	/**
 	 * Returns a string representation of the object.
@@ -64,7 +64,14 @@ class bagOfWords {
 		similarity = Math.round(((res*2)/strLen)*100D)/100D;
 		return (similarity*100);
 		}
-	public static Map removeAll(String text) {
+		/**
+		 * Removes all.
+		 *
+		 * @param      text  The text
+		 *
+		 * @return     { description_of_the_return_value }
+		 */
+	public static Map removeAll(final String text) {
 		String[] words = text.replaceAll("[^a-zA-Z. ]","").toLowerCase().split(" ");
 		Map<String, Integer> hmap = new HashMap<>();
 		int freq = 0;
@@ -79,11 +86,24 @@ class bagOfWords {
 	}
 }
 
-class Solution {
+/**
+ * Class for solution.
+ */
+final class Solution {
+	/**
+	 * constructor.
+	 */
+	private Solution() {
 
-	public static void main(String[] args) {
+	}
+	/**
+	 * main function.
+	 *
+	 * @param  args  The arguments
+	 */
+	public static void main(final String[] args) {
 		try {
-		bagOfWords f = new bagOfWords();
+		BagOfWords f = new BagOfWords();
 		Scanner sc = new Scanner(System.in);
 		File ip = new File(sc.next());
 		File[] listOfFiles = ip.listFiles();
@@ -96,11 +116,12 @@ class Solution {
 				if (i == j) {
 					res[i][j] = 100;
 				} else {
-				res[i][j] = bagOfWords.similarString(bagOfWords.toString(listOfFiles[i]),bagOfWords.toString(listOfFiles[j]));
+	res[i][j] = BagOfWords.similarString(BagOfWords.toString(listOfFiles[i]),
+					BagOfWords.toString(listOfFiles[j]));
 				if (max < res[i][j]) {
 					max = res[i][j];
-					res1 = "Maximum similarity is in between " + listOfFiles[i].getName() + " and " + listOfFiles[j].getName();
-
+					res1 = "Maximum similarity is in between "
+			+ listOfFiles[i].getName() + " and " + listOfFiles[j].getName();
 				}
 			}
 			}
