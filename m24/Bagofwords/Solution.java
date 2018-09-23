@@ -6,11 +6,11 @@ import java.io.FileReader;
 /**
  * Class for bag of words.
  */
-class bagofwords {
+class BagOfWords {
 /**
  * constructor.
  */
-    protected bagofwords() {
+    protected BagOfWords() {
     }
     /**
      * Removes all.
@@ -107,7 +107,7 @@ final class Solution {
     public static void main(final String[] args) {
         final int hundered = 100;
         try {
-        bagofwords f = new bagofwords();
+        BagOfWords f = new BagOfWords();
         Scanner sc = new Scanner(System.in);
         File ip = new File(sc.next());
         File[] listOfFiles = ip.listFiles();
@@ -120,8 +120,8 @@ final class Solution {
                 if (i == j) {
                     res[i][j] = hundered;
                 } else {
-res[i][j] = bagofwords.similarity(bagofwords.toString(listOfFiles[i]),
-                    bagofwords.toString(listOfFiles[j]));
+res[i][j] = BagOfWords.similarity(BagOfWords.toString(listOfFiles[i]),
+                    BagOfWords.toString(listOfFiles[j]));
                 if (max < res[i][j]) {
                     max = res[i][j];
     res1 = "Maximum similarity is in between "
