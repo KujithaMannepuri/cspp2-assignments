@@ -43,7 +43,7 @@ class BagOfWords {
      *
      * @return     { description_of_the_return_value }
      */
-    public static double 
+    public static double
 similarString(final String str1, final String str2) {
         int rows = str1.length();
         int cols = str2.length();
