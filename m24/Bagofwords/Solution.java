@@ -45,6 +45,8 @@ class bagofwords {
         double nmrtr = 0;
         double sum1 = 0;
         double sum2 = 0;
+        final int h = 100;
+        final double h2 = 100D;
         Map<String, Integer> hmap1 = removeAll(file1);
         Map<String, Integer> hmap2 = removeAll(file2);
         for (String ind1:hmap1.keySet()) {
@@ -61,7 +63,7 @@ class bagofwords {
             sum2 += Math.pow(hmap2.get(ind2), 2);
         }
         double denominator = Math.sqrt(sum1) * Math.sqrt(sum2);
-        return (int) ((((nmrtr / denominator) * 100D) / 100D) * 100);
+        return (int) ((((nmrtr / denominator) * h2) / h2) * h);
     }
     /**
      * Returns a string representation of the object.
@@ -103,6 +105,7 @@ final class Solution {
      * @param  args  The arguments
      */
     public static void main(final String[] args) {
+        final int hundered = 100;
         try {
         bagofwords f = new bagofwords();
         Scanner sc = new Scanner(System.in);
@@ -115,7 +118,7 @@ final class Solution {
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
                 if (i == j) {
-                    res[i][j] = 100;
+                    res[i][j] = hundered;
                 } else {
 res[i][j] = bagofwords.similarity(bagofwords.toString(listOfFiles[i]),
                     bagofwords.toString(listOfFiles[j]));
