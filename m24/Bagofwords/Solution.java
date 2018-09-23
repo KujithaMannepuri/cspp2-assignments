@@ -1,13 +1,16 @@
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
+import java.util.Map;
+import java.util.HashMap;
+import java.io.File;
+import java.io.FileReader;
 /**
  * Class for bag of words.
  */
-class bagOfWords {
+class bagofwords {
 /**
  * constructor.
  */
-	bagOfWords() {
+	protected bagofwords() {
 	}
 	/**
 	 * Removes all.
@@ -16,8 +19,9 @@ class bagOfWords {
 	 *
 	 * @return return hashmap.
 	 */
-	public static Map removeAll(String text) {
-		String[] words = text.replaceAll("[^a-zA-Z. ]","").toLowerCase().split(" ");
+	public static Map removeAll(final String text) {
+		String[] words = text.replaceAll("[^a-zA-Z. ]", "")
+		.toLowerCase().split(" ");
 		Map<String, Integer> hmap = new HashMap<>();
 		int freq = 0;
 		for (int i = 0; i < words.length; i++) {
@@ -77,7 +81,7 @@ class bagOfWords {
 			}
 			sc.close();
 			str = s.toString();
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			System.out.println("no file");
 		}
 		return str;
@@ -86,7 +90,7 @@ class bagOfWords {
 /**
  * Class for solution.
  */
-class Solution {
+final class Solution {
 	/**
 	 * constructor.
 	 */
@@ -100,7 +104,7 @@ class Solution {
 	 */
 	public static void main(final String[] args) {
 		try {
-		bagOfWords f = new bagOfWords();
+		bagofwords f = new bagofwords();
 		Scanner sc = new Scanner(System.in);
 		File ip = new File(sc.next());
 		File[] listOfFiles = ip.listFiles();
@@ -113,11 +117,11 @@ class Solution {
 				if (i == j) {
 					res[i][j] = 100;
 				} else {
-				res[i][j] = bagOfWords.similarity(bagOfWords.toString(listOfFiles[i]),
-					bagOfWords.toString(listOfFiles[j]));
+res[i][j] = bagofwords.similarity(bagofwords.toString(listOfFiles[i]),
+					bagofwords.toString(listOfFiles[j]));
 				if (max < res[i][j]) {
 					max = res[i][j];
-					res1 = "Maximum similarity is in between "
+	res1 = "Maximum similarity is in between "
 		+ listOfFiles[i].getName() + " and " + listOfFiles[j].getName();
 				}
 			}
@@ -136,7 +140,7 @@ class Solution {
 			System.out.println();
 		}
 		System.out.println(res1);
-	} catch (NoSuchElementException e) {
+	} catch (Exception e) {
 		System.out.println("empty directory");
 	}
 	}
