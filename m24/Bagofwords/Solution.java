@@ -1,11 +1,21 @@
 import java.util.*;
 import java.io.*;
-
+/**
+ * Class for bag of words.
+ */
 class bagOfWords {
-
+/**
+ * constructor.
+ */
 	bagOfWords() {
 	}
-	
+	/**
+	 * Removes all.
+	 *
+	 * @param text  The text
+	 *
+	 * @return return hashmap.
+	 */
 	public static Map removeAll(String text) {
 		String[] words = text.replaceAll("[^a-zA-Z. ]","").toLowerCase().split(" ");
 		Map<String, Integer> hmap = new HashMap<>();
@@ -19,6 +29,14 @@ class bagOfWords {
 		}
 		return hmap;
 	}
+	/**
+	 * similarity function.
+	 *
+	 * @param      file1  The file 1
+	 * @param      file2  The file 2
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public static int similarity(String file1, String file2) {
 		double nmrtr = 0;
 		double sum1 = 0;
@@ -41,6 +59,13 @@ class bagOfWords {
 		double denominator = Math.sqrt(sum1) * Math.sqrt(sum2);
 		return (int)((((nmrtr / denominator) * 100D) / 100D) * 100);
 	}
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @param      filename  The filename
+	 *
+	 * @return     String representation of the object.
+	 */
 	public static String toString(File filename) {
 		String str = "";
 		try {
@@ -58,7 +83,9 @@ class bagOfWords {
 		return str;
 	}
 }
-
+/**
+ * Class for solution.
+ */
 class Solution {
 	public static void main(String[] args) {
 		try {
